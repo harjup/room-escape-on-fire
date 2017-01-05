@@ -2,7 +2,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine.UI;
 
 public class TextDisplayGui : MonoBehaviour
@@ -99,7 +98,7 @@ public class TextDisplayGui : MonoBehaviour
 
         if (nameWindow != null)
         {
-            nameWindow.GetComponent<TMP_Text>().text = name;
+            nameWindow.GetComponent<SuperTextMesh>().text = name;
         }
     }
 
@@ -111,36 +110,27 @@ public class TextDisplayGui : MonoBehaviour
     public IEnumerator CrawlText(string text, Action callback)
     {
         var textWindow = transform.FindChild("MainTextBackground").FindChild("MainText");
-        var tmpText = textWindow.GetComponent<TMP_Text>();
+        var tmpText = textWindow.GetComponent<SuperTextMesh>();
 
-        tmpText.text = text;
+//        yield return new WaitForSeconds(3f);
+        tmpText.Text = text;
 
-        var visibleCount = 0;
-        var totalVisibleCharacters = text.Length;
+        tmpText.RegularRead();
 
-        tmpText.maxVisibleCharacters = visibleCount;
-
-        tmpText.ForceMeshUpdate();
-
-        while (visibleCount < totalVisibleCharacters)
-        {
-            yield return new WaitForSeconds(.005f);
-
-            visibleCount++;
-            tmpText.maxVisibleCharacters = visibleCount;
+        while (tmpText.reading)
+        {   
+            yield return new WaitForEndOfFrame();
         }
-
-            //yield return StartCoroutine(TextCrawler.TextCrawl(text, DialogueWindowText.SetText));
 
         callback();
     }
 
     public void SkipTextCrawl()
     {
-        if (TextCrawler._inProcess)
-        {
-            TextCrawler.SkipToEnd();
-        }
+//        if (TextCrawler._inProcess)
+//        {
+//            TextCrawler.SkipToEnd();
+//        }
     }
 
     public IEnumerator HideDialogWindow()
