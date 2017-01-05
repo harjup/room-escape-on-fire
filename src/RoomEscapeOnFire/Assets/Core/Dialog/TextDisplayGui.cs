@@ -15,48 +15,19 @@ public class TextDisplayGui : MonoBehaviour
 
 
     private GameObject _activeDialogueWindow;
-    // Gonna be lazy about initialization with lazy initialization. Can't trust start to run first anyways.
-//    private GameObject NormalNormalDialogueWindow 
-//    { 
-//        get
-//        {
-//            if (_normalDialogueWindow == null)
-//            {
-//                return _normalDialogueWindow = transform.FindChild("Normal").gameObject;
-//            } 
-//            return _normalDialogueWindow;
-//        } 
-//    }
 
-    private TextCrawler TextCrawler
+    private SuperTextMesh _superText;
+    private SuperTextMesh SuperText
     {
         get
         {
-            if (_textCrawler == null)
+            if (_superText == null)
             {
-                return _textCrawler = gameObject.GetComponent<TextCrawler>();
-            } 
-            return _textCrawler;
-        }
-    }
-
-    private DialogueWindowText DialogueWindowText
-    {
-        get
-        {
-            //            if (_dialogueWindowText == null)
-            //            {
-            //                return _dialogueWindowText = gameObject.GetComponentInChildren<DialogueWindowText>();
-            //            }
-            //
-            //            return _dialogueWindowText;
-
-            if (_activeDialogueWindow == null)
-            {
-                return null;
+                var textWindow = transform.FindChild("MainText");
+                return _superText = textWindow.GetComponent<SuperTextMesh>();
             }
 
-            return _activeDialogueWindow.GetComponentInChildren<DialogueWindowText>(true);
+            return _superText;
         }
     }
 
@@ -73,20 +44,13 @@ public class TextDisplayGui : MonoBehaviour
         }
     }
 
-    public void Awake()
-    {
-        StartCoroutine(CrawlText("THIS IS A TEST WOWWWWW!!!", () => { }));
-
-        // NormalNormalDialogueWindow.SetActive(false);
-    }
-    
     // This is an IEnumerator so we can wait for animations
     public IEnumerator ShowDialogueWindow()
     {
         // Do a tween animation and wait for it to finish
 
         // For now just make it draw
-       // _activeDialogueWindow.SetActive(true);
+        SuperText.gameObject.SetActive(true);
 
         yield return null;
     }
@@ -94,7 +58,7 @@ public class TextDisplayGui : MonoBehaviour
 
     public void SetName(string name)
     {
-        var nameWindow = _activeDialogueWindow.transform.FindChild("NameText");
+        var nameWindow = _activeDialogueWindow.transform.FindChild("Name");
 
         if (nameWindow != null)
         {
@@ -109,15 +73,11 @@ public class TextDisplayGui : MonoBehaviour
 
     public IEnumerator CrawlText(string text, Action callback)
     {
-        var textWindow = transform.FindChild("MainTextBackground").FindChild("MainText");
-        var tmpText = textWindow.GetComponent<SuperTextMesh>();
+        SuperText.Text = text;
 
-//        yield return new WaitForSeconds(3f);
-        tmpText.Text = text;
+        SuperText.RegularRead();
 
-        tmpText.RegularRead();
-
-        while (tmpText.reading)
+        while (SuperText.reading)
         {   
             yield return new WaitForEndOfFrame();
         }
@@ -127,26 +87,22 @@ public class TextDisplayGui : MonoBehaviour
 
     public void SkipTextCrawl()
     {
-//        if (TextCrawler._inProcess)
-//        {
-//            TextCrawler.SkipToEnd();
-//        }
+        if (SuperText.reading)
+        {
+            SuperText.SkipToEnd();
+        }
     }
 
     public IEnumerator HideDialogWindow()
     {
-        var text = DialogueWindowText;
-        if (text != null)
+        SuperText.UnRead();
+
+        while (SuperText.unreading)
         {
-            text.SetText("");
+            yield return new WaitForEndOfFrame();
         }
-        
-        TextCrawler.Clear();
 
-        // We may not want to hide the window, just leave it up for now
-        // _activeDialogueWindow.SetActive(false);
-
-        yield return null;
+        SuperText.gameObject.SetActive(false);
     }
 
 
