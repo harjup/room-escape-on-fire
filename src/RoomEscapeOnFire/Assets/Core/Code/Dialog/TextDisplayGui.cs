@@ -108,7 +108,7 @@ public class TextDisplayGui : MonoBehaviour
 
         SuperText.Text = "";
 
-        SuperText.gameObject.SetActive(false);
+        //SuperText.gameObject.SetActive(false);
     }
 
 

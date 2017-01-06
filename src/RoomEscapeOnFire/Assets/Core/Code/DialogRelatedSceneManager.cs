@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using Assets.Core.Code;
+using UnityEngine;
 
 public class DialogRelatedSceneManager : MonoBehaviour
 {
     private GameObject _currentScene;
+    private GameObject _roomPrefab;
 
-	void Start()
+
+    void Start()
 	{
 	    var closetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Closet");
+        _roomPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Room");
         SetupScene(closetPrefab);
 	}
 
@@ -17,9 +22,19 @@ public class DialogRelatedSceneManager : MonoBehaviour
             Destroy(_currentScene);
         }
 
-        var result = Instantiate(scenePrefab, Vector3.zero, Quaternion.identity);
+        _currentScene = Instantiate(scenePrefab, Vector3.zero, Quaternion.identity) as GameObject;
 
         // Undoes Unity appending (Clone) to the end of the instantiated object
-        result.name = scenePrefab.name;
+        _currentScene.name = scenePrefab.name;
+    }
+
+    [AwaitableYarnCommand("transition")]
+    public IEnumerator Transition()
+    {
+        yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
+
+        SetupScene(_roomPrefab);
+
+        yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
     }
 }

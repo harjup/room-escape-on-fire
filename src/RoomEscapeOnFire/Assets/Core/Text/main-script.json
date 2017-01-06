@@ -24,15 +24,15 @@
 		"tags": "",
 		"body": "Wow, a key made of <c=blue>ice!</c> How novel!\n\nI bet this will work in that door's <c=blue>ice key</c> shaped keyhole...\n\n// Remove key sprite\n<<pickup IceKey>>",
 		"position": {
-			"x": 351,
-			"y": 405
+			"x": 388,
+			"y": 436
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Closet.Door_Unlock",
 		"tags": "",
-		"body": "The door is open and the next chapter in this game can continue!!!",
+		"body": "The door is open and the next chapter in this game can continue!!!\n\n<<await transition SceneManager>>\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE AND I AM GOING TO BURN TO DEATH IN THREE MINUTES!!!",
 		"position": {
 			"x": 670,
 			"y": 684
@@ -54,8 +54,18 @@
 		"tags": "",
 		"body": "A little bundle of <c=red><j>heat.</j></c>",
 		"position": {
-			"x": 871,
-			"y": 239
+			"x": 872,
+			"y": 247
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Room.Fire_1",
+		"tags": "",
+		"body": "OH MY GOD THERE IS AN OPEN FIRE RIGHT HERE WHAT HAPPENED???",
+		"position": {
+			"x": 690,
+			"y": 11
 		},
 		"colorID": 0
 	}
