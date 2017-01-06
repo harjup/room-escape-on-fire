@@ -12,17 +12,17 @@
 	{
 		"title": "Closet.Door",
 		"tags": "",
-		"body": "<<if visited(\"Closet.Key\")>>\n     [[Closet.Door_Unlock]]   \n<<else>>\n    The door won't budge! It's <j>locked!</j>\n<<endif>>",
+		"body": "<<if visited(\"Closet.Key\")>>\n     [[Closet.Door_Unlock]]   \n<<else>>\n    The door won't budge! It's <j>locked!</j>\n<<endif>>\n\n// Let's make it so you have to melt the key in the two fires before you can leave???",
 		"position": {
-			"x": 355,
-			"y": 626
+			"x": 386,
+			"y": 680
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Closet.Key",
 		"tags": "",
-		"body": "Wow, a key made of <c=blue>ice!</c> How novel!\n\nI bet this will work in that door's <c=blue>ice key</c> shaped keyhole...\n\n// Remove key sprite",
+		"body": "Wow, a key made of <c=blue>ice!</c> How novel!\n\nI bet this will work in that door's <c=blue>ice key</c> shaped keyhole...\n\n// Remove key sprite\n<<pickup IceKey>>",
 		"position": {
 			"x": 351,
 			"y": 405
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "The door is open and the next chapter in this game can continue!!!",
 		"position": {
-			"x": 654,
-			"y": 628
+			"x": 670,
+			"y": 684
 		},
 		"colorID": 0
 	},

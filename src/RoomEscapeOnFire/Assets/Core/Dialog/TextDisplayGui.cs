@@ -97,10 +97,16 @@ public class TextDisplayGui : MonoBehaviour
     {
         SuperText.UnRead();
 
-        while (SuperText.unreading)
-        {
-            yield return new WaitForEndOfFrame();
-        }
+        // TODO: Figure out how we should wait for SuperText to finish unreading, assuming we do an animation for that
+        //        while (SuperText.unreading)
+        //        {
+        //            Debug.Log("Test");
+        //            yield return new WaitForEndOfFrame();
+        //        }
+
+        yield return new WaitForSeconds(.1f);
+
+        SuperText.Text = "";
 
         SuperText.gameObject.SetActive(false);
     }

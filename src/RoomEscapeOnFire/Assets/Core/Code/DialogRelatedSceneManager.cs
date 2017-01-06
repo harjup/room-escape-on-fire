@@ -17,6 +17,9 @@ public class DialogRelatedSceneManager : MonoBehaviour
             Destroy(_currentScene);
         }
 
-        Instantiate(scenePrefab, Vector3.zero, Quaternion.identity);
+        var result = Instantiate(scenePrefab, Vector3.zero, Quaternion.identity);
+
+        // Undoes Unity appending (Clone) to the end of the instantiated object
+        result.name = scenePrefab.name;
     }
 }
