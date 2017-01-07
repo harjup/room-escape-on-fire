@@ -5,14 +5,14 @@
 		"body": "// have checks for unlocking it, assuming we have any here\n\n\n\n[[Living.Door_BruteForce]]\n\nWhat's up with this door?\n\n\n",
 		"position": {
 			"x": 253,
-			"y": 232
+			"y": 230
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Living.Enter",
 		"tags": "",
-		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start timer>>\n\n<<if not visited(\"Living.Tutorial_Ending\")>>\n    // uncomment when choices work.\n    // [[Living.Tutorial]]\n<<endif>>",
+		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start timer>>\n\n<<if visited(\"Living.Tutorial_Ending\") is false>>\n    // uncomment when choices work.\n    // [[Living.Tutorial]]\n<<endif>>",
 		"position": {
 			"x": 260,
 			"y": -72
@@ -42,10 +42,100 @@
 	{
 		"title": "Living.Door_BruteForce",
 		"tags": "",
-		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null >>\n    <<set $door_count to 0>>\n    <<set $bang = \"*bang*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    Oh, I think it's open now. Easy peasy.\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n$bang\n<<endif>>",
+		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*bang*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    Oh, I think it's open now. Easy peasy.\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n$bang\n<<endif>>",
 		"position": {
 			"x": 507,
 			"y": 259
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Olaf",
+		"tags": "",
+		"body": "There appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <u>Walt Disney's Frozen</u>! I am a trademarked character loved by all children!\nOlaf: I am especially loved the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: Disney Magic!\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! You're not a cop!\nOlaf: Have you seen <u>Walt Disney's Frozen</u>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    // FROZEN ENDING. You die watching Frozen. Olaf holds you tight enough to keep you alive during the full runtime. You die at the credits.\n-> Eat the snowman\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man. All the frozen snowman flesh in my belly adds a whopping 5 minutes to the timer.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me!\n",
+		"position": {
+			"x": 255,
+			"y": 493
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Computer",
+		"tags": "",
+		"body": "<<if $computer_power is true>>\n    [[Living.Computer_Use]]\n<<endif>>\n\n\n<<if $checked_computer is false>>\n\nIt's my computer desk! My computer appears to be powered off.\n\nNo problem for me, though!\n\n<<endif>>\n\n*click*\n\n...\n\nWhat the heck?!? It's not turning on!\n\n<<set $checked_computer to 1>>\n\n",
+		"position": {
+			"x": 251,
+			"y": 751
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Computer_Plug",
+		"tags": "",
+		"body": "<<if $checked_computer is true>>\nAha! Oh course! The computer was not plugged in!\n<<else>>\nMy computer isn't plugged in. I should fix that.\n<<endif>>\n\n<<set $computer_power to 1>>\n// Change sprite to plugged in",
+		"position": {
+			"x": 259,
+			"y": 976
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Computer_Use",
+		"tags": "",
+		"body": "Now, what do I do with what little time I have left?\n\n-> Order a Pizza from Dominos\n    [[Living.Pizza_Ending]]\n-> Watch Bee Movie but sped up to $time_remaining minutes\n    Bee Ending",
+		"position": {
+			"x": 489,
+			"y": 759
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.ThisIsFine",
+		"tags": "",
+		"body": "<<if visited(\"Living.ThisIsFine\")>>\nA completely original dog is seated at the dining room table.\nHis little hat is caught in the blaze.\n\nDog: ...\nDog: ...\n\nThe dog clears his throat.\n\nDog: This is fine.\nDog: I'm okay with the events that are unfolding currently.\nThe dog takes a sip of coffee. His arm singed by the blaze.\nDog: That's okay, thinkgs are going to be okay.\nThe dogs face starts to melt.\n\nDog: ...\n\nDog: Theft is not a joke.\n<<else>>\nDog: This is fine.\n<<endif>>",
+		"position": {
+			"x": 1179,
+			"y": 388
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.ThisIsNotFine",
+		"tags": "",
+		"body": "The competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: ON MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n",
+		"position": {
+			"x": 1173,
+			"y": 603
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.FineDog",
+		"tags": "",
+		"body": "<<if $seconds_remaining <= 60>>\n    [[Living.ThisIsNotFine]]\n<<else>>\n    [[Living.ThisIsFine]]\n<<endif>>",
+		"position": {
+			"x": 862,
+			"y": 481
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Pizza_Ending",
+		"tags": "",
+		"body": "That's it! I can order a pizza from Dominos and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pepperoni to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n// Show a pizza tracker graphic as it slowly makes the pizza\n<<await play PizzaTracker>>\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\n<s>Uh, no</s>\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\n<s>I didn't read those. Hold on.</s>\n// X out pizza tracker and draw in police tracker. It finishes at 0:01.\n<<await play PoliceTracker>>\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n// go sepia, laugh track, roll credits, pizza ending",
+		"position": {
+			"x": 748,
+			"y": 777
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Time_Ran_Out",
+		"tags": "",
+		"body": "I'm out of time. And oxygen. The fire used it all up.\nI fell on the ground, covered in fire.\nThis is the end for me.\n\n// Out of time",
+		"position": {
+			"x": 220,
+			"y": 1294
 		},
 		"colorID": 0
 	}
