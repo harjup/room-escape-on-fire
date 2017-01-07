@@ -2,30 +2,50 @@
 	{
 		"title": "Living.Door",
 		"tags": "",
-		"body": "What's up with this door?",
+		"body": "// have checks for unlocking it, assuming we have any here\n\n\n\n[[Living.Door_BruteForce]]\n\nWhat's up with this door?\n\n\n",
 		"position": {
-			"x": 350,
-			"y": 190
+			"x": 253,
+			"y": 232
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Living.Enter",
 		"tags": "",
-		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start timer>>\n\n[[Living.Tutorial]]\n",
+		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start timer>>\n\n<<if not visited(\"Living.Tutorial_Ending\")>>\n    // uncomment when choices work.\n    // [[Living.Tutorial]]\n<<endif>>",
 		"position": {
-			"x": 242,
-			"y": -51
+			"x": 260,
+			"y": -72
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Living.Tutorial",
 		"tags": "",
-		"body": "But this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> I DON'T HAVE TIME FOR THIS MY HAIR IS ON FIRE\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<add timer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<add timer 5>>\n    GOOD ENOUGH\n-> THE FUNDAMENTALS ARE IMPORTANT EVEN IN TIMES OF DISTRESS\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n\n// Give control for 5 seconds",
+		"body": "But this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> I DON'T HAVE TIME FOR THIS MY HAIR IS ON FIRE\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<add timer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<add timer 5>>\n    GOOD ENOUGH\n-> THE FUNDAMENTALS ARE IMPORTANT EVEN IN TIMES OF DISTRESS\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n\n// Give control for 5 seconds, then die. Tutorial ending.",
 		"position": {
 			"x": 492,
 			"y": -69
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Tutorial_Ending",
+		"tags": "",
+		"body": "Hold on, I think I forgot something\n\n...\n\n// run down timer\n\nOH NO I RAN OUT OF TIME I'M DYING\n\n// Tutorial Ending\n\n// Need some kind of loopback to the beginning",
+		"position": {
+			"x": 727,
+			"y": -75
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Door_BruteForce",
+		"tags": "",
+		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null >>\n    <<set $door_count to 0>>\n    <<set $bang = \"*bang*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    Oh, I think it's open now. Easy peasy.\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n$bang\n<<endif>>",
+		"position": {
+			"x": 507,
+			"y": 259
 		},
 		"colorID": 0
 	}

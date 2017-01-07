@@ -43,20 +43,20 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
         // TODO: This is currently a hack that gets variable interpolation working
         // Hopefully this will be officially supported soon!!!
         // ...or I can eventually do it.
-        // TODO: Only enable if I actually need this for some reason
-        //        var variableStorage = FindObjectOfType<ExampleVariableStorage>();
-        //        MatchCollection matches = _stringInterpolationRegex.Matches(text);
-        //        foreach (Match match in matches)
-        //        {
-        //            Group group = match.Groups[0];
-        //            var key = group.Value;
-        //            Debug.Log(key);
-        //
-        //            var value = variableStorage.GetValue(key);
-        //            Debug.Log(value);
-        //
-        //            text = text.Replace(key, value.AsString);
-        //        }
+        // TODO: Only enable if I actually need this for some reason (it turns out I do, now!)
+                var variableStorage = FindObjectOfType<VariableStorageBehaviour>();
+                MatchCollection matches = _stringInterpolationRegex.Matches(text);
+                foreach (Match match in matches)
+                {
+                    Group group = match.Groups[0];
+                    var key = group.Value;
+                    Debug.Log(key);
+        
+                    var value = variableStorage.GetValue(key);
+                    Debug.Log(value);
+        
+                    text = text.Replace(key, value.AsString);
+                }
         #endregion
 
         StartCoroutine(InputWait.WaitForInputAxis("Fire1", TextDisplayGui.SkipTextCrawl));

@@ -5,13 +5,13 @@ using UnityEngine;
 public class DialogRelatedSceneManager : MonoBehaviour
 {
     private GameObject _currentScene;
-    private GameObject _roomPrefab;
+    private GameObject _livingRoomPrefab;
 
 
     void Start()
 	{
 	    var closetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Closet");
-        _roomPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Room");
+        _livingRoomPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Living");
         SetupScene(closetPrefab);
 	}
 
@@ -33,7 +33,7 @@ public class DialogRelatedSceneManager : MonoBehaviour
     {
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
 
-        SetupScene(_roomPrefab);
+        SetupScene(_livingRoomPrefab);
 
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
     }
