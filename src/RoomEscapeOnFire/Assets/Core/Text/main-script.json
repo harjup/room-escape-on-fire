@@ -32,7 +32,7 @@
 	{
 		"title": "Closet.Door_Unlock",
 		"tags": "",
-		"body": "The door is open and the next chapter in this game can continue!!!\n\n<<await transition SceneManager>>\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE AND I AM GOING TO BURN TO DEATH IN THREE MINUTES!!!",
+		"body": "The key slid right in, like ice!\n\n// unlock sound\n\nOk! Let's get out of here!\n\n<<await transition SceneManager>>\n\n[[Living.Enter]]\n",
 		"position": {
 			"x": 670,
 			"y": 684

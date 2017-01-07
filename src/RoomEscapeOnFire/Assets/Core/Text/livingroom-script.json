@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Living.Door",
+		"tags": "",
+		"body": "What's up with this door?",
+		"position": {
+			"x": 350,
+			"y": 190
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Enter",
+		"tags": "",
+		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start timer>>\n\n[[Living.Tutorial]]\n",
+		"position": {
+			"x": 242,
+			"y": -51
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Tutorial",
+		"tags": "",
+		"body": "But this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> I DON'T HAVE TIME FOR THIS MY HAIR IS ON FIRE\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<add timer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<add timer 5>>\n    GOOD ENOUGH\n-> THE FUNDAMENTALS ARE IMPORTANT EVEN IN TIMES OF DISTRESS\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n\n// Give control for 5 seconds",
+		"position": {
+			"x": 492,
+			"y": -69
+		},
+		"colorID": 0
+	}
+]
