@@ -16,7 +16,6 @@ public class ScrollableBackground : MonoBehaviour
 	{
 	    _cursorTracker = FindObjectOfType<CursorTracker>();
         _dialogueRunner = FindObjectOfType<DialogueRunner>();
-
 	}
 
 	void Update()

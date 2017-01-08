@@ -74,7 +74,7 @@
 		"tags": "",
 		"body": "<<if $checked_computer is true>>\nAha! Oh course! The computer was not plugged in!\n<<else>>\nMy computer isn't plugged in. I should fix that.\n<<endif>>\n\n<<set $computer_power to 1>>\n// Change sprite to plugged in",
 		"position": {
-			"x": 259,
+			"x": 257,
 			"y": 976
 		},
 		"colorID": 0
@@ -92,7 +92,7 @@
 	{
 		"title": "Living.ThisIsFine",
 		"tags": "",
-		"body": "<<if visited(\"Living.ThisIsFine\")>>\nA completely original dog is seated at the dining room table.\nHis little hat is caught in the blaze.\n\nDog: ...\nDog: ...\n\nThe dog clears his throat.\n\nDog: This is fine.\nDog: I'm okay with the events that are unfolding currently.\nThe dog takes a sip of coffee. His arm singed by the blaze.\nDog: That's okay, thinkgs are going to be okay.\nThe dogs face starts to melt.\n\nDog: ...\n\nDog: Theft is not a joke.\n<<else>>\nDog: This is fine.\n<<endif>>",
+		"body": "<<if $checked_finedog is true>>\n    Dog: This is fine.\n<<else>>\n    A completely original dog is seated at the dining room table.\n    His little hat is caught in the blaze.\n    \n    Dog: ...\n    Dog: ...\n    \n    The dog clears his throat.\n    \n    Dog: This is fine.\n    Dog: I'm okay with the events that are unfolding currently.\n    The dog takes a sip of coffee. His arm singed by the blaze.\n    Dog: That's okay, thinkgs are going to be okay.\n    The dogs face starts to melt.\n    \n    Dog: ...\n    \n    Dog: Theft is not a joke.\n    \n    <<set $checked_finedog to true>>\n<<endif>>",
 		"position": {
 			"x": 1179,
 			"y": 388
@@ -142,7 +142,7 @@
 	{
 		"title": "Living.HintBot",
 		"tags": "",
-		"body": "<<if $hintbot_uncovered is 1>>\n    [[Living.Hintbot_Uncovered]]\n<<endif>>\n\n\n<<if $examined_blanket_hintbot is not 1>>\nThere appears to be an object covered by a blanket in the corner.\n\nHintbot: I'LL GIVE YOU A HINT ABOUT THIS PUZZLE, HUMAN. THERE IS ITEM UNDER FABRIC SHEET.\n\nHuh? What was that?\n\nLooking at the sheet again, it looks like it has started to catch a blaze.\n\n...\n\n<<endif>>\n<<set $examined_blanket_hintbot to 1>>\n\nHintbot: OH NO I AM DYING PLEASE PUT OUT THE FIRE! THAT IS MY HINT!! BEEP BOOP.\n\n<<if $has_water_gun is 1>>\nUse the water gun on Hintbot?\n-> Shoot the gun\n    I fired out all 12 shots at the blanket. Each bullet exploded into a small cloud of vapor on impact.\n    After shooting all the bullets, the fire died down enough to pull the blanket off of Hintbot without burning myself.\n    // Remove blanket\n    <<set $hintbot_uncovered to 1>>\n    Hintbot: CORRECT. THE SOLUTION WAS USE WATER GUN ON BLANKET. GOOD JOB.\n    [[Living.Hintbot_Uncovered]]\n-> Save your bullets\n    Nah...\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n<<else>>\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n    Hintbot: MAYBE THERE IS SOMETHING NEAR THE FOOD COOLING UNIT THAT COULD STOP COMBUSTION FROM OCCURRING\n    Hintbot: THAT IS MY HINT\n<<endif>>\n\n\n\n\n",
+		"body": "<<if $hintbot_uncovered is true>>\n    [[Living.Hintbot_Uncovered]]\n<<endif>>\n\n\n<<if $examined_blanket_hintbot is false>>\nThere appears to be an object covered by a blanket in the corner.\n\nHintbot: I'LL GIVE YOU A HINT ABOUT THIS PUZZLE, HUMAN. THERE IS ITEM UNDER FABRIC SHEET.\n\nHuh? What was that?\n\nLooking at the sheet again, it looks like it has started to catch a blaze.\n\n...\n\n<<endif>>\n\n\nHintbot: OH NO I AM DYING PLEASE PUT OUT THE FIRE! THAT IS MY HINT!! BEEP BOOP.\n\n<<if $has_water_gun is 1>>\nUse the water gun on Hintbot?\n-> Shoot the gun\n    I fired out all 12 shots at the blanket. Each bullet exploded into a small cloud of vapor on impact.\n    After shooting all the bullets, the fire died down enough to pull the blanket off of Hintbot without burning myself.\n    // Remove blanket\n    <<set $hintbot_uncovered to true>>\n    Hintbot: CORRECT. THE SOLUTION WAS USE WATER GUN ON BLANKET. GOOD JOB.\n    [[Living.Hintbot_Uncovered]]\n-> Save your bullets\n    Nah...\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n<<elseif $examined_blanket_hintbot is true>>\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n    Hintbot: MAYBE THERE IS SOMETHING NEAR THE FOOD COOLING UNIT THAT COULD STOP COMBUSTION FROM OCCURRING\n    Hintbot: THAT IS MY HINT\n<<endif>>\n\n<<set $examined_blanket_hintbot to true>>",
 		"position": {
 			"x": 1200,
 			"y": -45
@@ -186,6 +186,16 @@
 		"position": {
 			"x": 1884,
 			"y": 362
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Fridge",
+		"tags": "",
+		"body": "MAYBE I CAN SURVIVE IN MY REFRIDGERATOR?\n\n<<open fridge>>\n\n...\n\nWHAT IS THAT???\n",
+		"position": {
+			"x": -29,
+			"y": 477
 		},
 		"colorID": 0
 	}

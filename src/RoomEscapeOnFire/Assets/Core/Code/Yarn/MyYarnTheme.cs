@@ -62,30 +62,21 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
         StartCoroutine(InputWait.WaitForInputAxis("Fire1", TextDisplayGui.SkipTextCrawl));
 
         // If we've got a name to use, then set it here.
-        var splitOnName = text.Split(new char[] {':'}, StringSplitOptions.RemoveEmptyEntries);
-        if (splitOnName.Length > 1)
-        {
-            var theName = splitOnName[0];
-            TextDisplayGui.SetName(theName);
-            // TODO-1: Leftover from yosemite birding. Delete.
-            //FindObjectOfType<TextCrawlSoundManager>().SetTextCrawlVoice(splitOnName[0]);
-
-            var remainder = string.Join(":", splitOnName.Skip(1).ToArray()).Trim();
-            
-            // TODO-1: Leftover from yosemite birding. Delete.
-            // var fieldCharacters = FindObjectOfType<FieldCharacters>();
-            // if (fieldCharacters != null)
-            // {
-            //     fieldCharacters.Talk(name);
-            // }
-
-            yield return StartCoroutine(TextDisplayGui.CrawlText(remainder, () => { }));
-        }
-        else
-        {
-            TextDisplayGui.HideName();
-            yield return StartCoroutine(TextDisplayGui.CrawlText(text, () => { }));
-        }
+        // Let's ignore name tags for now. It can just be inline.
+        //TODO: Reimplement name tags at some point
+//        var splitOnName = text.Split(new char[] {':'}, StringSplitOptions.RemoveEmptyEntries);
+//        if (splitOnName.Length > 1)
+//        {
+//            var theName = splitOnName[0];
+//            TextDisplayGui.SetName(theName);
+//            var remainder = string.Join(":", splitOnName.Skip(1).ToArray()).Trim();
+//            yield return StartCoroutine(TextDisplayGui.CrawlText(remainder, () => { }));
+//        }
+//        else
+//        {
+//            TextDisplayGui.HideName();
+          yield return StartCoroutine(TextDisplayGui.CrawlText(text, () => { }));
+//        }
 
         // Wait for input before advancing
         yield return StartCoroutine(InputWait.WaitForInputAxis("Fire1", () => { }));
