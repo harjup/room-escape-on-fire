@@ -44,15 +44,15 @@
 		"tags": "",
 		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*bang*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    Oh, I think it's open now. Easy peasy.\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n$bang\n<<endif>>",
 		"position": {
-			"x": 507,
-			"y": 259
+			"x": 505,
+			"y": 234
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Living.Olaf",
 		"tags": "",
-		"body": "There appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <u>Walt Disney's Frozen</u>! I am a trademarked character loved by all children!\nOlaf: I am especially loved the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: Disney Magic!\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! You're not a cop!\nOlaf: Have you seen <u>Walt Disney's Frozen</u>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    // FROZEN ENDING. You die watching Frozen. Olaf holds you tight enough to keep you alive during the full runtime. You die at the credits.\n-> Eat the snowman\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man. All the frozen snowman flesh in my belly adds a whopping 5 minutes to the timer.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me!\n",
+		"body": "There appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <u>Walt Disney's Frozen</u>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: Disney Magic!\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! You're not a cop!\nOlaf: Have you seen <u>Walt Disney's Frozen</u>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<$set has_water_gun to 1>>\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    // FROZEN ENDING. You die watching Frozen. Olaf holds you tight enough to keep you alive during the full runtime. You die at the credits.\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 5 minutes to the timer.\n",
 		"position": {
 			"x": 255,
 			"y": 493
@@ -102,7 +102,7 @@
 	{
 		"title": "Living.ThisIsNotFine",
 		"tags": "",
-		"body": "The competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: ON MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n",
+		"body": "The competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: ON MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n// This is not fine ending",
 		"position": {
 			"x": 1173,
 			"y": 603
@@ -136,6 +136,56 @@
 		"position": {
 			"x": 220,
 			"y": 1294
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.HintBot",
+		"tags": "",
+		"body": "<<if $hintbot_uncovered is 1>>\n    [[Living.Hintbot_Uncovered]]\n<<endif>>\n\n\n<<if $examined_blanket_hintbot is not 1>>\nThere appears to be an object covered by a blanket in the corner.\n\nHintbot: I'LL GIVE YOU A HINT ABOUT THIS PUZZLE, HUMAN. THERE IS ITEM UNDER FABRIC SHEET.\n\nHuh? What was that?\n\nLooking at the sheet again, it looks like it has started to catch a blaze.\n\n...\n\n<<endif>>\n<<set $examined_blanket_hintbot to 1>>\n\nHintbot: OH NO I AM DYING PLEASE PUT OUT THE FIRE! THAT IS MY HINT!! BEEP BOOP.\n\n<<if $has_water_gun is 1>>\nUse the water gun on Hintbot?\n-> Shoot the gun\n    I fired out all 12 shots at the blanket. Each bullet exploded into a small cloud of vapor on impact.\n    After shooting all the bullets, the fire died down enough to pull the blanket off of Hintbot without burning myself.\n    // Remove blanket\n    <<set $hintbot_uncovered to 1>>\n    Hintbot: CORRECT. THE SOLUTION WAS USE WATER GUN ON BLANKET. GOOD JOB.\n    [[Living.Hintbot_Uncovered]]\n-> Save your bullets\n    Nah...\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n<<else>>\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n    Hintbot: MAYBE THERE IS SOMETHING NEAR THE FOOD COOLING UNIT THAT COULD STOP COMBUSTION FROM OCCURRING\n    Hintbot: THAT IS MY HINT\n<<endif>>\n\n\n\n\n",
+		"position": {
+			"x": 1200,
+			"y": -45
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Hintbot_Uncovered",
+		"tags": "",
+		"body": "<<if $got_hint is not 1>>\nHintbot: I AM HINTBOT, I SUPPLY TIPS AND TRICKS TO HELP YOU ON YOUR JOURNEY\n\nHow do I get out of here?\n\nHintbot: CALCULATING TO PHRASE AS HINT\nHintbot: PROCESSING\nHintbot: PROCESSING\nHintbot: REMOVE PAINTING FROM WALL AND EXIT THROUGH UNCOVERED WINDOW\nHintbot: ERROR. THE SOLUTION HAS BEEN OUTPUT INSTEAD OF A HINT\nHintbot: PROCESSING\nHintbot: DEBUGGING\n<<endif>>\nHintbot: COLORFUL ITEM ON WALL CONTAINS SECRET\nHintbot: YOUR HINT HAS BEEN DEPLOYED. PLEASE FORGET ABOUT THE SOLUTION.\n\n<<set $got_hint to 1>>",
+		"position": {
+			"x": 1495,
+			"y": -79
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Painting",
+		"tags": "",
+		"body": "<<if $got_hint is 1>>\n    Remove the painting from the wall and exit through an uncovered window. Got it.\n    HINTBOT: NO YOU HAVE TO REASON THROUGH IT PLEASE BEEP BOOP\n    WHATEVER, WE'RE BURING OXYGEN HERE!!!\n    // Remove painting\n    Uhhh... this isn't a window.\n    This is a person shaped hole.\n    Can I even fit in this thing?\n    ...\n    The hole is pitch black, and seems to go on forever is there an end to it?\n    I feel like... this hole is calling to me.\n    This is...\n    -> Hintbot's hole  \n        [[Living.Hole_Hintbot]]\n    -> My hole\n        [[Living.Hole_Mine]]\n<<else>>\n    Ah yes, my prized painting I display for everyone to see.\n    ...\n    TOO BAD IT'S GOING TO BE DAMAGED BY ALL THE FIRE AND SMOKE AFTER I BURN TO DEATH!!!\n<<endif>>",
+		"position": {
+			"x": 1614,
+			"y": 229
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Hole_Hintbot",
+		"tags": "",
+		"body": "COME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm, not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A HUMAN SHAPED MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME.\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\nBOOOOOOOOM\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n// RIP HINTBOT ENDING",
+		"position": {
+			"x": 1908,
+			"y": 107
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Hole_Mine",
+		"tags": "",
+		"body": "This is MY hole!\nI smashed my body against the hole, only to realize I just barely didn't fit.\nMAYBE I CAN FIT NAKED\nI undressed, my eyes never leaving contact with my hole.\nI also covered myself in oil.\nTrying again, I managed to slide right in. The hole felt like it was sucking me deeper and deeper down.\nI couldn't move my head or limbs, only slowly slide forward in pitch blackness.\nI may not have burned to death, but I'm not sure if hole is a better fate...\nBut weirdly enough, I feel... content.\nSafe.\n...\n...\n...\nHappy.\n// HOLE ENDING",
+		"position": {
+			"x": 1884,
+			"y": 362
 		},
 		"colorID": 0
 	}
