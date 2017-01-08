@@ -42,7 +42,7 @@
 	{
 		"title": "Living.Door_BruteForce",
 		"tags": "",
-		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*BANG* *BANG*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    Oh, I think it's open now. Easy peasy.\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n<j>$bang</j>\n<<endif>>",
+		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*BANG* *BANG*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    [[Ending.Brute_Force]]\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n<j>$bang</j>\n<<endif>>",
 		"position": {
 			"x": 505,
 			"y": 234
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "That's it! I can order a pizza from Dominos and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pepperoni to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n// Show a pizza tracker graphic as it slowly makes the pizza\n<<await play PizzaTracker>>\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\n<s>Uh, no</s>\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\n<s>I didn't read those. Hold on.</s>\n// X out pizza tracker and draw in police tracker. It finishes at 0:01.\n<<await play PoliceTracker>>\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n// go sepia, laugh track, roll credits, pizza ending",
 		"position": {
-			"x": 748,
-			"y": 777
+			"x": 727,
+			"y": 766
 		},
 		"colorID": 0
 	},
@@ -205,7 +205,17 @@
 		"body": "<<await ending SceneManager Out_Of_Time>>\n\nI fell on the ground, covered in fire.\nThis is the end for me.",
 		"position": {
 			"x": 782,
-			"y": 1296
+			"y": 1295
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Ending.Brute_Force",
+		"tags": "",
+		"body": "<<stop DeathTimer>>\n\nOh. It's open! Easy peasy.\nWell, I guess I'll just walk out this door and leave now.\n...\nOH WAIT ALL MY BELONGINGS ARE STILL BURNING TO DEATH SHIT!!!\n\n<<await ending SceneManager Brute_Force>>\n\nWhen the fire department arrived, my dwelling was a charred mess.\nThey still sprayed the charcoal down with their hoses, though.\nSo now my house is a puddle.\nGuess I'm sleeping outside for the time being.\nThis time, I'm NOT in the dog house.",
+		"position": {
+			"x": 765,
+			"y": 214
 		},
 		"colorID": 0
 	}

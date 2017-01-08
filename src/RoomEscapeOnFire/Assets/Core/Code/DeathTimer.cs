@@ -40,6 +40,7 @@ public class DeathTimer : MonoBehaviour
         StartCoroutine(_timerRoutine);
     }
 
+    [YarnCommand("stop")]
     public void StopTimer()
     {
         if (_timerRoutine != null)
@@ -48,8 +49,8 @@ public class DeathTimer : MonoBehaviour
             _timerRoutine = null;
         }
 
-        _deathDescription.UnRead();
-        _timerValue.UnRead();
+        _deathDescription.Text = "";
+        _timerValue.Text = "";
     }
 
 
