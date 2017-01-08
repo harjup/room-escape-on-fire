@@ -132,10 +132,10 @@
 	{
 		"title": "Living.Time_Ran_Out",
 		"tags": "",
-		"body": "I'm out of time. And oxygen. The fire used it all up.\nI fell on the ground, covered in fire.\nThis is the end for me.\n\n// Out of time",
+		"body": "I'm out of time. And oxygen. The fire used it all up.\n\n\n[[Ending.Out_Of_Time]]\n\n// Out of time",
 		"position": {
 			"x": 220,
-			"y": 1294
+			"y": 1292
 		},
 		"colorID": 0
 	},
@@ -196,6 +196,16 @@
 		"position": {
 			"x": -29,
 			"y": 477
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Ending.Out_Of_Time",
+		"tags": "",
+		"body": "<<await ending SceneManager Out_Of_Time>>\n\nI fell on the ground, covered in fire.\nThis is the end for me.",
+		"position": {
+			"x": 782,
+			"y": 1296
 		},
 		"colorID": 0
 	}

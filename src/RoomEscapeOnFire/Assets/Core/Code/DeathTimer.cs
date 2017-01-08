@@ -32,17 +32,24 @@ public class DeathTimer : MonoBehaviour
         _deathDescription.gameObject.SetActive(true);
         _timerValue.gameObject.SetActive(true);
 
+        _deathDescription.Text = "<c=fire><j>MINUTES BEFORE DEATH BY FLAME</c>";
+        
         _secondsRemaining = MaxSecondsRemaining;
         _timerRoutine = DeathCountdown();
 
         StartCoroutine(_timerRoutine);
     }
 
-    [YarnCommand("stop")]
     public void StopTimer()
     {
-        StopCoroutine(_timerRoutine);
-        _timerRoutine = null;
+        if (_timerRoutine != null)
+        {
+            StopCoroutine(_timerRoutine);
+            _timerRoutine = null;
+        }
+
+        _deathDescription.UnRead();
+        _timerValue.UnRead();
     }
 
 
