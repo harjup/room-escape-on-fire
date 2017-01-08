@@ -78,7 +78,16 @@ public class TextDisplayGui : MonoBehaviour
         SuperText.RegularRead();
 
         while (SuperText.reading)
-        {   
+        {
+            if (Input.GetAxis("Fire1") > .01f)
+            {
+                SuperText.SpeedRead();
+            }
+            else
+            {
+                SuperText.RegularRead();
+            }
+
             yield return new WaitForEndOfFrame();
         }
 

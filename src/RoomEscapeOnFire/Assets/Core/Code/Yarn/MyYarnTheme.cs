@@ -59,7 +59,8 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
                 }
         #endregion
 
-        StartCoroutine(InputWait.WaitForInputAxis("Fire1", TextDisplayGui.SkipTextCrawl));
+        // Since this is timing based, maybe we should only allow speed reading.
+        //StartCoroutine(InputWait.WaitForInputAxis("Fire1", TextDisplayGui.SkipTextCrawl));
 
         // If we've got a name to use, then set it here.
         // Let's ignore name tags for now. It can just be inline.
