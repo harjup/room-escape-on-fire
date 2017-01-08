@@ -42,7 +42,7 @@
 	{
 		"title": "Closet.Fire_1",
 		"tags": "",
-		"body": "It is a small <c=red><j>fire.</j></c>",
+		"body": "It is a small <c=fire><w>fire.</w></c>",
 		"position": {
 			"x": 636,
 			"y": 233
@@ -52,7 +52,7 @@
 	{
 		"title": "Closet.Fire_2",
 		"tags": "",
-		"body": "A little bundle of <c=red><j>heat.</j></c>",
+		"body": "A little bundle of <c=fire><w>heat.</w></c>",
 		"position": {
 			"x": 872,
 			"y": 247
