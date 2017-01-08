@@ -12,7 +12,7 @@
 	{
 		"title": "Living.Enter",
 		"tags": "",
-		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start timer>>\n\n<<if visited(\"Living.Tutorial_Ending\") is false>>\n    // uncomment when choices work.\n    // [[Living.Tutorial]]\n<<endif>>",
+		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start DeathTimer>>\n\n<<if visited(\"Living.Tutorial_Ending\") is false>>\n    // uncomment when choices work.\n    // [[Living.Tutorial]]\n<<endif>>",
 		"position": {
 			"x": 260,
 			"y": -72
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "The competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: ON MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n// This is not fine ending",
 		"position": {
-			"x": 1173,
-			"y": 603
+			"x": 1172,
+			"y": 622
 		},
 		"colorID": 0
 	},
