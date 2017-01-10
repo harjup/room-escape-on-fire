@@ -13,7 +13,7 @@ public class SuperTextButton : MonoBehaviour
     private void Start()
     {
         _textMesh = GetComponent<SuperTextMesh>();
-        if (_collider != null)
+        if (_collider == null)
         {
             _collider = gameObject.AddComponent<BoxCollider2D>();
         }
@@ -27,7 +27,7 @@ public class SuperTextButton : MonoBehaviour
         }
 
         _textMesh.Text = text;
-        if (_collider == null)
+        if (_collider != null)
         {
             Destroy(_collider);
         }
@@ -43,6 +43,7 @@ public class SuperTextButton : MonoBehaviour
     private void OnMouseDown()
     {
         _textMesh.color = Color.black;
+        _textMesh.Rebuild();
     }
 
     private void OnMouseUpAsButton()
@@ -57,15 +58,18 @@ public class SuperTextButton : MonoBehaviour
     private void OnMouseUp()
     {
         _textMesh.color = Color.white;
+        _textMesh.Rebuild();
     }
 
     private void OnMouseExit()
     {
         _textMesh.color = Color.white;
+        _textMesh.Rebuild();
     }
 
     private void OnMouseEnter()
     {
         _textMesh.color = Color.grey;
+        _textMesh.Rebuild();
     }
 }
