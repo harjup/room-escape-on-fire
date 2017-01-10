@@ -37,7 +37,7 @@ public class TextDisplayGui : MonoBehaviour
         {
             if (_dialogChoicePrefab == null)
             {
-                return _dialogChoicePrefab = Resources.Load<GameObject>("Menu/DialogChoiceButton");
+                return _dialogChoicePrefab = Resources.Load<GameObject>("Prefabs/Text/SuperTextButton");
             }
 
             return _dialogChoicePrefab;
@@ -132,27 +132,22 @@ public class TextDisplayGui : MonoBehaviour
         {
             var choice = choices[i];
             var button = Instantiate(DialogChoicePrefab);
-            button.transform.parent = transform.parent.Find("Buttons");
-            button.transform.localScale = Vector3.one; // The scale is getting messed up for some reason??
-
-            var screenHeightRefRes = 1080f;
-            //button.transform.position = new Vector2(initialPosition.x, initialPosition.y - ((Screen.height / 6f) * i));
-            button.transform.localPosition = new Vector2(initialPosition.x, initialPosition.y - ((screenHeightRefRes / 6f) * i));
-            button.GetComponentInChildren<Text>().text = choice;
-
+            
+            button.transform.position = new Vector2(initialPosition.x, initialPosition.y - ((1.25f) * i));
+            
             // So, it turns out this is an issue with the old shitty version of mono unity uses
             // TODO: We can just directly plug i into the callback after Unity 5.5
             var choiceIndex = i; // Curse you C# mutability!
 
             buttons.Add(button);
 
-            button.GetComponent<Button>()
-                .onClick
-                .AddListener(() =>
-                {
-                    CleanUpButtons(buttons); // This is gross, but should be called when all the buttons are in the list.
-                    onChoice(choiceIndex);
-                });
+            button.GetComponent<SuperTextButton>().SetText(choice);
+            button.GetComponent<SuperTextButton>().SetClickAction(() =>
+            {
+                CleanUpButtons(buttons); // This is gross, but should be called when all the buttons are in the list.
+                onChoice(choiceIndex);
+            });
+
         }
     }
 
