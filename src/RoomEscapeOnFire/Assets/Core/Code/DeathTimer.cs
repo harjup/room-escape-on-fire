@@ -109,7 +109,7 @@ public class DeathTimer : MonoBehaviour
             yield return new WaitForSeconds(1f);
             _secondsRemaining -= 1;
 
-            if (_isTutorial)
+            if (_secondsRemaining == 0 && _isTutorial)
             {
                 _secondsRemaining = 1;
             }
