@@ -12,7 +12,7 @@
 	{
 		"title": "Living.Enter",
 		"tags": "",
-		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n<<start DeathTimer>>\n\n<<if visited(\"Living.Tutorial_Ending\") is false>>\n    // uncomment when choices work.\n    // [[Living.Tutorial]]\n<<endif>>",
+		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\n<<if visited(\"Living.Tutorial_Ending\") is false>>\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n    // uncomment when choices work.\n    [[Living.Tutorial]]\n<<endif>>\n\nI GOTTA DO SOMETHING, FAST!!!\n\n<<start-tutorial DeathTimer>>",
 		"position": {
 			"x": 260,
 			"y": -72
@@ -22,9 +22,9 @@
 	{
 		"title": "Living.Tutorial",
 		"tags": "",
-		"body": "But this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> I DON'T HAVE TIME FOR THIS MY HAIR IS ON FIRE\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<add timer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<add timer 5>>\n    GOOD ENOUGH\n-> THE FUNDAMENTALS ARE IMPORTANT EVEN IN TIMES OF DISTRESS\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n\n// Give control for 5 seconds, then die. Tutorial ending.",
+		"body": "But this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> I DON'T HAVE TIME FOR THIS MY HAIR IS ON FIRE\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer 5>>\n    GOOD ENOUGH\n-> THE FUNDAMENTALS ARE IMPORTANT EVEN IN TIMES OF DISTRESS\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n<<await run-down DeathTimer>>\n// run down timer to 1, pause at 1\nShit.\n\n[[Living.Tutorial_Ending]]\n\n// Give control for 5 seconds, then die. Tutorial ending.",
 		"position": {
-			"x": 492,
+			"x": 490,
 			"y": -69
 		},
 		"colorID": 0
@@ -32,7 +32,7 @@
 	{
 		"title": "Living.Tutorial_Ending",
 		"tags": "",
-		"body": "Hold on, I think I forgot something\n\n...\n\n// run down timer\n\nOH NO I RAN OUT OF TIME I'M DYING\n\n// Tutorial Ending\n\n// Need some kind of loopback to the beginning",
+		"body": "<<await ending SceneManager Out_Of_Time>>\n\nOH NO, I RAN OUT OF TIME I'M DYINGGGGGG\nIF THERE WERE A <j>NEXT TIME</j> I WOULDN'T <j>REVIEW THE BASICS</j> AT ALL!!!",
 		"position": {
 			"x": 727,
 			"y": -75
@@ -216,6 +216,16 @@
 		"position": {
 			"x": 765,
 			"y": 214
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Ending.Continue",
+		"tags": "",
+		"body": "Let's try that again.\n\n<<await transition SceneManager>>\n\n[[Living.Enter]]",
+		"position": {
+			"x": 275,
+			"y": -349
 		},
 		"colorID": 0
 	}

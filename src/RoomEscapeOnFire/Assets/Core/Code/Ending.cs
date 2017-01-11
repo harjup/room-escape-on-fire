@@ -22,9 +22,14 @@ public class Ending : MonoBehaviour
             button.GetComponent<SuperTextMesh>().alignment = SuperTextMesh.Alignment.Center;
             button.transform.position = continuePos.position;
             
+            
             var textButton = button.GetComponent<SuperTextButton>();
             textButton.SetText("<w>Continue?</w>");
-            textButton.SetClickAction(() => {Debug.Log("CONTINUE!!!!");});
+            textButton.SetClickAction(() =>
+            {
+                FindObjectOfType<DialogueRunner>().StartDialogue("Ending.Continue");
+                Destroy(textButton.gameObject);
+            });
 
             spawnedContinueButton = true;
         }

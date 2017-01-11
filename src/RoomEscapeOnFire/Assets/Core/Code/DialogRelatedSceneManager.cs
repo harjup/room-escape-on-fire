@@ -50,6 +50,8 @@ public class DialogRelatedSceneManager : MonoBehaviour
     {
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
 
+        FindObjectOfType<SimpleVariableStorage>().ResetToDefaults();
+
         SetupScene(_livingRoomPrefab);
 
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
@@ -66,6 +68,5 @@ public class DialogRelatedSceneManager : MonoBehaviour
 
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
     }
-
-    //<<ending SceneManager Out_Of_Time>>
+    
 }
