@@ -11,6 +11,11 @@ public class SwitchSprite : MonoBehaviour
     public void DoTheSwitchSprite()
     {
         var spriteRenderer = GetComponent<SpriteRenderer>();
+        if (NextSprite == null)
+        {
+            spriteRenderer.enabled = false;
+        }
+
         spriteRenderer.sprite = NextSprite;
     }
 
