@@ -14,9 +14,8 @@ public class EndingProgress : MonoBehaviour
         {
             FindObjectOfType<DialogueRunner>().StartDialogue("Ending.Continue");
             Destroy(textButton.gameObject);
-
-            // Kill ending screen when we transition back to gameplays
-            Destroy(gameObject);
         });
+
+
     }
 }

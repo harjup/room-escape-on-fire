@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
+// There's a lot of :effort: going on in this class, that's for sure
 public class ObjectSpawner : MonoBehaviour
 {
     [YarnCommand("create-fire")]
@@ -10,7 +11,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         var parent = GameObject.Find("Hintbot").transform;
         var firePrefab = Resources.Load<GameObject>("Prefabs/OneOffs/Fire");
-        var res = Instantiate(firePrefab, parent) as GameObject;
+        var res = Instantiate(firePrefab, parent);
         res.transform.position = parent.position.AddY(2f).AddZ(-1f);
         
         res.name = firePrefab.name;
@@ -30,15 +31,18 @@ public class ObjectSpawner : MonoBehaviour
         var res = Instantiate(holePrefab, parent);
         res.transform.position = parent.position;
         res.name = holePrefab.name;
+
+        parent.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     [YarnCommand("create-olaf")]
     public void CreateOlaf()
     {
         var parent = GameObject.Find("Fridge").transform;
+        var targetPos = GameObject.Find("olaf-pos").transform;
         var olafPrefab = Resources.Load<GameObject>("Prefabs/OneOffs/Olaf");
         var res = Instantiate(olafPrefab, parent);
-        res.transform.position = parent.position + new Vector3(-2.61f, -4.76f, -1f);
+        res.transform.localPosition = targetPos.localPosition;
         res.name = olafPrefab.name;
     }
 }

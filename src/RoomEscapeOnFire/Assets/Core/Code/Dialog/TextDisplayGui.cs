@@ -133,7 +133,7 @@ public class TextDisplayGui : MonoBehaviour
             var choice = choices[i];
             var button = Instantiate(DialogChoicePrefab);
             
-            button.transform.position = new Vector2(initialPosition.x, initialPosition.y - ((1.25f) * i));
+            button.transform.position = new Vector3(initialPosition.x, initialPosition.y - ((1.25f) * i), button.transform.position.z);
             
             // So, it turns out this is an issue with the old shitty version of mono unity uses
             // TODO: We can just directly plug i into the callback after Unity 5.5

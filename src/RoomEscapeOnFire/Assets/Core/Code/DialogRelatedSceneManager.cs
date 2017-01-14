@@ -50,6 +50,13 @@ public class DialogRelatedSceneManager : MonoBehaviour
     {
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
 
+        // If we came from the ending screen clean it up
+        var endingProgress = FindObjectOfType<EndingProgress>();
+        if (endingProgress != null)
+        {
+            Destroy(endingProgress.gameObject);
+        }
+        
         FindObjectOfType<SimpleVariableStorage>().ResetToDefaults();
 
         SetupScene(_livingRoomPrefab);

@@ -52,10 +52,10 @@
 	{
 		"title": "Living.Olaf",
 		"tags": "",
-		"body": "<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <u>Walt Disney's Frozen</u>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: Disney Magic!\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! You're not a cop!\nOlaf: Have you seen <u>Walt Disney's Frozen</u>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 60 seconds to the timer.\n    <<await add DeathTimer 60>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
+		"body": "<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <j>Walt Disney's Frozen</j>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: <w>Disney Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! <j>You're not a cop!</j>\nOlaf: Have you seen <j>Walt Disney's Frozen</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 60 seconds to the timer.\n    <<await add DeathTimer 60>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
 		"position": {
-			"x": 236,
-			"y": 382
+			"x": 226,
+			"y": 375
 		},
 		"colorID": 0
 	},
@@ -72,7 +72,7 @@
 	{
 		"title": "Living.Computer_Plug",
 		"tags": "",
-		"body": "<<if $checked_computer is true>>\nAha! Oh course! The computer was not plugged in!\n<<else>>\nMy computer isn't plugged in. I should fix that.\n<<endif>>\n\n<<set $computer_power to 1>>\n<<switch-sprite ComputerDesk>>\n// Change sprite to plugged in",
+		"body": "<<if $computer_power is 1>>\n    The computer should be plugged in and ready to go.\n<<elseif $checked_computer is true>>\n    Aha! Oh course! The computer was not plugged in!\n<<else>>\n    My computer isn't plugged in. I should fix that.\n<<endif>>\n\n<<set $computer_power to 1>>\n<<switch-sprite ComputerDesk>>\n// Change sprite to plugged in",
 		"position": {
 			"x": 238,
 			"y": 865
@@ -82,7 +82,7 @@
 	{
 		"title": "Living.Computer_Use",
 		"tags": "",
-		"body": "Now, what do I do with what little time I have left?\n\n-> Order a Pizza from Dominos\n    [[Living.Pizza_Ending]]\n-> Watch Bee Movie but sped up to $time_remaining minutes\n    [[Ending.Bee_Movie]]",
+		"body": "Now, what do I do with what little time I have left?\n\n-> Order a Pizza from Dominos\n    [[Living.Pizza_Ending]]\n-> Watch Bee Movie but x1000 speed\n    [[Ending.Bee_Movie]]",
 		"position": {
 			"x": 470,
 			"y": 648
@@ -102,7 +102,7 @@
 	{
 		"title": "Living.This_Is_Not_Fine",
 		"tags": "",
-		"body": "<<await ending SceneManager This_Is_Not_Fine>>\n\nThe competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: ON MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n// This is not fine ending",
+		"body": "<<await ending SceneManager This_Is_Not_Fine>>\n\nThe competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: OH MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n\nPlease support KC Green's work. He is a national treasure.\n// This is not fine ending",
 		"position": {
 			"x": 1261,
 			"y": 478
@@ -112,10 +112,10 @@
 	{
 		"title": "Living.FineDog",
 		"tags": "",
-		"body": "<<if $seconds_remaining <= 60>>\n    [[Living.This_Is_Not_Fine]]\n<<else>>\n    [[Living.This_Is_Fine]]\n<<endif>>",
+		"body": "<<if $seconds_remaining <= 45>>\n    [[Living.This_Is_Not_Fine]]\n<<else>>\n    [[Living.This_Is_Fine]]\n<<endif>>",
 		"position": {
-			"x": 979,
-			"y": 357
+			"x": 977,
+			"y": 355
 		},
 		"colorID": 0
 	},

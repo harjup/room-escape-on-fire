@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using Assets.Core.Code;
+using Yarn;
 using Yarn.Unity;
 
 public class DeathTimer : MonoBehaviour
@@ -98,6 +99,10 @@ public class DeathTimer : MonoBehaviour
     {
         var timespan = TimeSpan.FromSeconds(_secondsRemaining);
         _timerValue.Text = string.Format("<c=fire>{0:D1}:{1:D2}</c>", timespan.Minutes, timespan.Seconds);
+
+        var variableStorage = FindObjectOfType<SimpleVariableStorage>();
+        variableStorage.SetValue("$time_remaining", new Value(string.Format("{0:D1}:{1:D2}", timespan.Minutes, timespan.Seconds)));
+        variableStorage.SetValue("$seconds_remaining", new Value((float)_secondsRemaining));
     }
 
     private IEnumerator DeathCountdown()
