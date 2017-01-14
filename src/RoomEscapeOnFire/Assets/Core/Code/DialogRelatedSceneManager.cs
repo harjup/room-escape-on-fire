@@ -62,6 +62,8 @@ public class DialogRelatedSceneManager : MonoBehaviour
     {
         FindObjectOfType<DeathTimer>().StopTimer();
 
+        FindObjectOfType<EndingProgressStore>().AddEnding(endingName);
+
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
 
         SetupEnding(endingName);

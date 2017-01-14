@@ -14,24 +14,9 @@ public class Ending : MonoBehaviour
     {
         if (!spawnedContinueButton &&!FindObjectOfType<DialogueRunner>().isDialogueRunning)
         {
-            var buttonPrefab = Resources.Load<GameObject>("Prefabs/Text/SuperTextButton");
-            var continuePos = transform.FindChild("ContinuePos");
-            var button = Instantiate(buttonPrefab, continuePos) as GameObject;
-
-            button.GetComponent<SuperTextMesh>().anchor = TextAnchor.MiddleCenter;
-            button.GetComponent<SuperTextMesh>().alignment = SuperTextMesh.Alignment.Center;
-            button.transform.position = continuePos.position;
-            
-            
-            var textButton = button.GetComponent<SuperTextButton>();
-            textButton.SetText("<w>Continue?</w>");
-            textButton.SetClickAction(() =>
-            {
-                FindObjectOfType<DialogueRunner>().StartDialogue("Ending.Continue");
-                Destroy(textButton.gameObject);
-            });
-
-            spawnedContinueButton = true;
+            var altEndPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Ending-Progress");
+            var button = Instantiate(altEndPrefab);
+            Destroy(gameObject);
         }
     }
 }

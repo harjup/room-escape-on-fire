@@ -22,7 +22,7 @@
 	{
 		"title": "Living.Tutorial",
 		"tags": "",
-		"body": "<<start-tutorial DeathTimer>>\n\nBut this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> I DON'T HAVE TIME FOR THIS MY HAIR IS ON FIRE\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer 5>>\n    GOOD ENOUGH\n-> THE FUNDAMENTALS ARE IMPORTANT EVEN IN TIMES OF DISTRESS\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n<<await run-down DeathTimer>>\n// run down timer to 1, pause at 1\nShit.\n\n[[Living.Tutorial_Ending]]\n\n// Give control for 5 seconds, then die. Tutorial ending.",
+		"body": "<<start-tutorial DeathTimer>>\n\nBut this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> <j>I DON'T HAVE TIME FOR THIS</j>\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer 5>>\n    GOOD ENOUGH\n-> <j>THE FUNDAMENTALS ARE IMPORTANT</j>\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n<<await run-down DeathTimer>>\n// run down timer to 1, pause at 1\nShit.\n\n[[Living.Tutorial_Ending]]\n\n// Give control for 5 seconds, then die. Tutorial ending.",
 		"position": {
 			"x": 471,
 			"y": -180
@@ -172,9 +172,9 @@
 	{
 		"title": "Ending.Hole_Hintbot",
 		"tags": "",
-		"body": "<<stop DeathTimer>>\n\nCOME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm, not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A HUMAN SHAPED MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME.\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\nBOOOOOOOOM\n\n<<await ending SceneManager Hole_Hintbot>>\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n// RIP HINTBOT ENDING",
+		"body": "<<stop DeathTimer>>\n\nCOME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm, not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A HUMAN SHAPED MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME.\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\nBOOOOOOOOM\n\n<<await ending SceneManager Rejection_Of_Vore>>\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n// RIP HINTBOT ENDING",
 		"position": {
-			"x": 1889,
+			"x": 1887,
 			"y": -4
 		},
 		"colorID": 0
@@ -182,10 +182,10 @@
 	{
 		"title": "Ending.Hole_Mine",
 		"tags": "",
-		"body": "<<await ending SceneManager Hole_Mine>>\n\nThis is MY hole!\nI smashed my body against the hole several times.\nI NEED TO LUBE UP!\nI covered myself in oil, never losing eye contact with the hole.\nTrying again, I managed to slide right in. The hole felt like it was sucking me deeper and deeper down.\nI couldn't move my head or limbs, only slowly slide forward in pitch blackness.\nI may not have burned to death, but I'm not sure if hole is a better fate...\nBut weirdly enough, I feel... content.\nSafe.\n...\n...\n...\nHappy.\n// HOLE ENDING",
+		"body": "<<await ending SceneManager Vore>>\n\nThis is MY hole!\nI smashed my body against the hole several times.\nI NEED TO LUBE UP!\nI covered myself in oil, never losing eye contact with the hole.\nTrying again, I managed to slide right in. The hole felt like it was sucking me deeper and deeper down.\nI couldn't move my head or limbs, only slowly slide forward in pitch blackness.\nI may not have burned to death, but I'm not sure if hole is a better fate...\nBut weirdly enough, I feel... content.\nSafe.\n...\n...\n...\nHappy.\n// HOLE ENDING",
 		"position": {
-			"x": 1890,
-			"y": 231
+			"x": 1957,
+			"y": 239
 		},
 		"colorID": 0
 	},
