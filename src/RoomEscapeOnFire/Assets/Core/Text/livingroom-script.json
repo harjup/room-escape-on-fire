@@ -42,7 +42,7 @@
 	{
 		"title": "Living.Door_BruteForce",
 		"tags": "",
-		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*BANG* *BANG*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    [[Ending.Brute_Force]]\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *bang*\">>\n<j>$bang</j>\n<<endif>>",
+		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*BANG* *BANG* *BANG*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but there's a padlock on it!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    [[Ending.Brute_Force]]\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *BANG* *BANG* *BANG*\">>\n<j>$bang</j>\n<<endif>>",
 		"position": {
 			"x": 486,
 			"y": 123
@@ -52,7 +52,7 @@
 	{
 		"title": "Living.Olaf",
 		"tags": "",
-		"body": "<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <j>Walt Disney's Frozen</j>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: <w>Disney Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! <j>You're not a cop!</j>\nOlaf: Have you seen <j>Walt Disney's Frozen</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 60 seconds to the timer.\n    <<await add DeathTimer 60>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
+		"body": "<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <j>Walt Disney's Frozen</j>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: <w>Disney Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! <j>You're not a cop!</j>\nOlaf: Have you seen <j>Walt Disney's Frozen</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 60 seconds to the timer.\n    <<await add DeathTimer 60>>\n    <<pickup Olaf>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
 		"position": {
 			"x": 226,
 			"y": 375
@@ -256,6 +256,46 @@
 		"position": {
 			"x": 714,
 			"y": 888
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Wallscroll",
+		"tags": "",
+		"body": "IT WAS YOUR FAULT, <j>ANIME</j>\nALL OF LIFE'S HARDSHIPS ARE BECAUSE OF <j>ANIME</j>",
+		"position": {
+			"x": 1289,
+			"y": 774
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Window",
+		"tags": "",
+		"body": "The window is... barred shut?\n<j>WHO WOULD DO THIS???</j>",
+		"position": {
+			"x": 1522,
+			"y": 774
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Oven",
+		"tags": "",
+		"body": "DID I LEAVE THE STOVE ON??? IS THIS THE SOURCE OF THE FIRE???\nWait a second, this is an eletric stove...\nHOW IS MY STOVE ON FIRE IT DOESN'T EVEN USE GAS!",
+		"position": {
+			"x": 1387,
+			"y": 999
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Living.Sink",
+		"tags": "",
+		"body": "MAYBE I CAN USE SOME WATER TO PUT OUT THE FIRE\n...\nOh yeah, my water is shut off. I didn't pay my bills.\nWah wah wah...",
+		"position": {
+			"x": 1628,
+			"y": 999
 		},
 		"colorID": 0
 	}
