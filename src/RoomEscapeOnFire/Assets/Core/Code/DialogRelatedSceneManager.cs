@@ -6,15 +6,16 @@ using Yarn.Unity;
 public class DialogRelatedSceneManager : MonoBehaviour
 {
     private GameObject _currentScene;
+    private GameObject _closetPrefab;
     private GameObject _livingRoomPrefab;
     private GameObject _endingPrefab;
 
     void Start()
 	{
-	    var closetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Closet");
+	    _closetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Closet");
         _livingRoomPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Living");
         _endingPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Ending");
-        SetupScene(closetPrefab);
+        SetupScene(_closetPrefab);
 	}
 
     public void SetupScene(GameObject scenePrefab)
@@ -77,5 +78,14 @@ public class DialogRelatedSceneManager : MonoBehaviour
 
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
     }
-    
+
+    [AwaitableYarnCommand("closet")]
+    public IEnumerator Closet()
+    {
+        yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
+
+        SetupScene(_closetPrefab);
+
+        yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
+    }
 }
