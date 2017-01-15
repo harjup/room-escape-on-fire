@@ -17,7 +17,7 @@
 			"x": 80,
 			"y": -382
 		},
-		"colorID": 0
+		"colorID": 1
 	},
 	{
 		"title": "Living.Tutorial",
@@ -172,7 +172,7 @@
 	{
 		"title": "Ending.Hole_Hintbot",
 		"tags": "",
-		"body": "<<stop DeathTimer>>\n\nCOME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A DOG SHAPED MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME.\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\nBOOOOOOOOM\n\n<<await ending SceneManager Rejection_Of_Vore>>\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n(RIP Hintbot)\n// RIP HINTBOT ENDING",
+		"body": "<<stop DeathTimer>>\n\nCOME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\n<<await ending SceneManager Rejection_Of_Vore>>\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A DOG MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME?\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\nBOOOOOOOOM\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n(RIP Hintbot)\n// RIP HINTBOT ENDING",
 		"position": {
 			"x": 1887,
 			"y": -4
@@ -227,7 +227,7 @@
 			"x": 80,
 			"y": -689
 		},
-		"colorID": 0
+		"colorID": 2
 	},
 	{
 		"title": "Ending.Frozen",
@@ -242,7 +242,7 @@
 	{
 		"title": "Ending.Pizza",
 		"tags": "",
-		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n// go sepia, laugh track, roll credits, pizza ending",
+		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNot at all scripted, haha.\n\n(Pizza End)\n// go sepia, laugh track, roll credits, pizza ending",
 		"position": {
 			"x": 935,
 			"y": 661
@@ -382,7 +382,7 @@
 	{
 		"title": "True_Ending",
 		"tags": "",
-		"body": "...\nOh, of course.\nThe solution was right behind me.\n\n<<await closet SceneManager>>\n\nThere was never a drawing of I dunno, some meme here\nIt has always just been a normal window. A window with people on the other side.\nWatching me.\nMaybe I should jump right through and give them a visit.\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, and talk to living snowmen I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right? How smart could they possibly get?\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of degrenerative diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
+		"body": "...\nOh, of course.\nThe solution was right behind me.\n\n<<await closet SceneManager>>\n\nThere was never a diversity mural here.\nIt has always been a normal window. A window with people on the other side.\nWatching me.\nMaybe I should jump right through and give them a visit.\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, even talk to living snowmen... I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right?\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of degrenerative diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
 		"position": {
 			"x": 978,
 			"y": -731

@@ -7,12 +7,14 @@ public class DialogRelatedSceneManager : MonoBehaviour
 {
     private GameObject _currentScene;
     private GameObject _closetPrefab;
+    private GameObject _trueClosetPrefab;
     private GameObject _livingRoomPrefab;
     private GameObject _endingPrefab;
 
     void Start()
 	{
 	    _closetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Closet");
+        _trueClosetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/True-Closet");
         _livingRoomPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Living");
         _endingPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Ending");
         SetupScene(_closetPrefab);
@@ -84,7 +86,7 @@ public class DialogRelatedSceneManager : MonoBehaviour
     {
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
 
-        SetupScene(_closetPrefab);
+        SetupScene(_trueClosetPrefab);
 
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
     }

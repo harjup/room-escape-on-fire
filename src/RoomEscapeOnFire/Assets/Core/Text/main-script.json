@@ -68,5 +68,15 @@
 			"y": 11
 		},
 		"colorID": 0
+	},
+	{
+		"title": "Closet.Mural",
+		"tags": "",
+		"body": "What a beautiful mural of racial and gender diversity!\nWe should always value more diversity in our world.",
+		"position": {
+			"x": 359,
+			"y": -78
+		},
+		"colorID": 0
 	}
 ]
