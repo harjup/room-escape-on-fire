@@ -12,7 +12,7 @@
 	{
 		"title": "Living.Enter",
 		"tags": "",
-		"body": "Oh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n<<if $is_epilogue is true>>\n[[Living.Epilogue]]\n<<endif>>\n\n...\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\n<<if visited(\"Living.Tutorial_Ending\") is false and $SkipIntro is false>>\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n    // uncomment when choices work.\n    [[Living.Tutorial]]\n<<endif>>\n\nI GOTTA DO SOMETHING, FAST!!!\n\n<<start DeathTimer>>",
+		"body": "<<stop MusicPlayer>>\n\nOh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n<<if $is_epilogue is true>>\n[[Living.Epilogue]]\n<<endif>>\n\n...\n\n<<play MusicPlayer panic>>\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\n<<if visited(\"Living.Tutorial_Ending\") is false and $SkipIntro is false>>\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n    // uncomment when choices work.\n    [[Living.Tutorial]]\n<<endif>>\n\nI GOTTA DO SOMETHING, FAST!!!\n\n<<start DeathTimer>>",
 		"position": {
 			"x": 80,
 			"y": -382
@@ -302,7 +302,7 @@
 	{
 		"title": "Living.Epilogue",
 		"tags": "",
-		"body": "...huh?\n\nThis room is still on fire?\n\nI thought I escaped.\n\nOr did I die?\n\n...\n\nWas I eaten by a monster?\n\n...\n\nMaybe Hintbot can help.\n\n<<start DeathTimer>>",
+		"body": "<<play MusicPlayer relaxed>>\n\n...huh?\n\nThis room is still on fire?\n\nI thought I escaped.\n\nOr did I die?\n\n...\n\nWas I eaten by a monster?\n\n...\n\nMaybe Hintbot can help.\n\n<<start DeathTimer>>",
 		"position": {
 			"x": 382,
 			"y": -695
