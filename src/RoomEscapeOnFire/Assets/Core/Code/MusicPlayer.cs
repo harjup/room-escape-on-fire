@@ -54,7 +54,7 @@ public class MusicPlayer : MonoBehaviour
     }
 
     [YarnCommand("stop")]
-    public void PlaySong()
+    public void StopSong()
     {
         MusicSource.DOFade(0f, .25f);
     }

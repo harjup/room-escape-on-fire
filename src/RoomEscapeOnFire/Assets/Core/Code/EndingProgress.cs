@@ -8,6 +8,8 @@ public class EndingProgress : MonoBehaviour
 {
 	void Start ()
 	{
+	    FindObjectOfType<MusicPlayer>().StopSong();
+
 	    var hasAllEndings = FindObjectOfType<EndingProgressStore>().HasAllEndings();
 
 	    var button = GameObject.Find("ContinueButton");
