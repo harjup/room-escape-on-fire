@@ -4,6 +4,7 @@ using System.Collections;
 
 public class SuperTextButton : MonoBehaviour
 {
+    public Color DefaultColor = Color.white;
     private SuperTextMesh _textMesh;
 
     private BoxCollider2D _collider;
@@ -27,6 +28,8 @@ public class SuperTextButton : MonoBehaviour
         }
 
         _textMesh.Text = text;
+        _textMesh.color = DefaultColor;
+        _textMesh.Rebuild();
         if (_collider != null)
         {
             Destroy(_collider);
@@ -48,7 +51,7 @@ public class SuperTextButton : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
-        _textMesh.color = Color.white;
+        _textMesh.color = DefaultColor;
         if (_clickAction != null)
         {
            _clickAction();
@@ -57,13 +60,13 @@ public class SuperTextButton : MonoBehaviour
 
     private void OnMouseUp()
     {
-        _textMesh.color = Color.white;
+        _textMesh.color = DefaultColor;
         _textMesh.Rebuild();
     }
 
     private void OnMouseExit()
     {
-        _textMesh.color = Color.white;
+        _textMesh.color = DefaultColor;
         _textMesh.Rebuild();
     }
 

@@ -8,11 +8,19 @@ public class EndingProgressStore : MonoBehaviour
 
     public void AddEnding(string endingName)
     {
-        AchievedEndings.Add(endingName);
+        if (!AchievedEndings.Contains(endingName))
+        {
+            AchievedEndings.Add(endingName);
+        }
     }
 
     public bool HasEnding(string endingName)
     {
         return AchievedEndings.Contains(endingName);
+    }
+
+    public bool HasAllEndings()
+    {
+        return AchievedEndings.Count >= 8;
     }
 }
