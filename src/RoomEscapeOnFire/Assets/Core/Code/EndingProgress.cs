@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn;
 using Yarn.Unity;
 
 public class EndingProgress : MonoBehaviour
@@ -18,11 +19,11 @@ public class EndingProgress : MonoBehaviour
             textButton.SetText("<size=1>9. EPILOGUE");
             textButton.SetClickAction(() =>
             {
-                FindObjectOfType<DialogueRunner>().StartDialogue("Epilogue");
+                FindObjectOfType<DialogueRunner>().StartDialogue("Ending.Continue_Into_Epilogue");
                 Destroy(textButton.gameObject);
             });
         }
-	    else
+        else
 	    {
             textButton.SetText("<w>Continue?</w>");
             textButton.SetClickAction(() =>

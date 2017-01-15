@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Assets.Core.Code;
 using UnityEngine;
+using Yarn;
 using Yarn.Unity;
 
 public class DialogRelatedSceneManager : MonoBehaviour
@@ -61,6 +62,13 @@ public class DialogRelatedSceneManager : MonoBehaviour
         }
         
         FindObjectOfType<SimpleVariableStorage>().ResetToDefaults();
+
+        // Kinda hackish, we want to set the is_epilogue after we clear everything else out so we can go down the epilogue route
+        // TODO If we had a variable storage with multiple roots, or allowed "permanent" values, this wouldn't be a problem
+        if (FindObjectOfType<EndingProgressStore>().HasAllEndings())
+        {
+            FindObjectOfType<SimpleVariableStorage>().SetValue("$is_epilogue", new Value(true)); 
+        }
 
         SetupScene(_livingRoomPrefab);
 

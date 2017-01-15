@@ -302,7 +302,7 @@
 	{
 		"title": "Living.Epilogue",
 		"tags": "",
-		"body": "...huh?\n\nThis room is still fire?\n\nI thought I escaped.\n\nOr did I die?\n\n...\n\nWas I eaten by a monster?\n\n...\n\nMaybe hintbot can help.\n\n<<start DeathTimer>>",
+		"body": "...huh?\n\nThis room is still on fire?\n\nI thought I escaped.\n\nOr did I die?\n\n...\n\nWas I eaten by a monster?\n\n...\n\nMaybe Hintbot can help.\n\n<<start DeathTimer>>",
 		"position": {
 			"x": 382,
 			"y": -695
@@ -388,5 +388,15 @@
 			"y": -731
 		},
 		"colorID": 5
+	},
+	{
+		"title": "Ending.Continue_Into_Epilogue",
+		"tags": "",
+		"body": "...\n\n<<await transition SceneManager>>\n\n[[Living.Enter]]",
+		"position": {
+			"x": -189,
+			"y": -686
+		},
+		"colorID": 2
 	}
 ]
