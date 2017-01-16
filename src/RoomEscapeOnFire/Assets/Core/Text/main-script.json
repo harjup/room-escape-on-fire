@@ -2,9 +2,9 @@
 	{
 		"title": "Closet.Enter",
 		"tags": "",
-		"body": "<<play MusicPlayer relaxed>>\n\n...\n\n...<j>huh???</j>\n\nWhere am I?\n\n// door handle noises\n\nThis <c=yellow>door</c> is <j>locked!</j>\n\n// SEEK A WAY OUT",
+		"body": "<<play MusicPlayer relaxed>>\n\n...\n\n...<j>huh???</j>\n\n\nWhere am I?\n\n// door handle noises\n\n\nThis <c=yellow>door</c> is <j>locked!</j>\n\n// SEEK A WAY OUT",
 		"position": {
-			"x": 350,
+			"x": 348,
 			"y": 190
 		},
 		"colorID": 0

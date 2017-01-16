@@ -42,7 +42,7 @@
 	{
 		"title": "Living.Door_BruteForce",
 		"tags": "",
-		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"*BANG* *BANG* *BANG*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    *bang* *bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but it's not doing anything!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    [[Ending.Brute_Force]]\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" *BANG* *BANG* *BANG*\">>\n<j>$bang</j>\n<<endif>>",
+		"body": "// Gonna need to figure out how to define this initially, \n// or if undefined ints are just zero\n<<if $door_count is null>>\n    <<set $door_count to 0>>\n    <<set $bang = \"<e=bang>*BANG* <e=bang>*BANG* <e=bang>*BANG*\">>\n<<endif>>\n\n<<set $door_count to $door_count + 1>>\n\n\n<<if $door_count is 1>>\n    What's up with this door? I can't open it!\n    Is this the exit?\n<<elseif $door_count is 2>>\n    <e=bang>*bang* <e=bang>*bang*\n    I don't think I can open it!\n<<elseif $door_count is 3>>\n    I mean, the wheel itself turns, but it's not doing anything!\n<<elseif $door_count is 4>>\n    Would staring at the door work? Could that unlock its mysteries?\n<<elseif $door_count is 5>>\n    PLEASE OPEN, DOOR! I'M BEGGING YOU!!!\n\n<<elseif $door_count >= 25>>\n    [[Ending.Brute_Force]]\n<<elseif $door_count >= 6>>\n    <<set $bang = $bang + \" <e=bang>*BANG* <e=bang>*BANG* <e=bang>*BANG*\">>\n<j>$bang</j>\n<<endif>>",
 		"position": {
 			"x": 499,
 			"y": -58
@@ -122,7 +122,7 @@
 	{
 		"title": "Living.Pizza_Ending",
 		"tags": "",
-		"body": "That's it! I can order a pizza from Domios and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pizza to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n\n<<play-oneshot MusicPlayer pizza>>\n<<await pizza PizzaTracker>>\n\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\nDelivery person: Uh, no\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\nDelivery Person: I didn't read those. Hold on.\n\n<<play-oneshot MusicPlayer police>>\n<<await police PizzaTracker>>\n\n[[Ending.Pizza]]",
+		"body": "That's it! I can order a pizza from Domios and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pizza to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n\n<<play-oneshot MusicPlayer pizza>>\n<<await pizza PizzaTracker>>\n\n<e=knock>*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\nDelivery person: Uh, no\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\nDelivery Person: I didn't read those. Hold on.\n\n<<play-oneshot MusicPlayer police>>\n<<await police PizzaTracker>>\n\n[[Ending.Pizza]]",
 		"position": {
 			"x": 708,
 			"y": 655
@@ -142,7 +142,7 @@
 	{
 		"title": "Living.HintBot",
 		"tags": "",
-		"body": "<<if $is_epilogue is true>>\n[[Living.Hintbot_Epilogue]]\n<<endif>>\n\n\n<<if $hintbot_uncovered is true>>\n    [[Living.Hintbot_Uncovered]]\n<<endif>>\n\n\n<<if $examined_blanket_hintbot is false>>\nThere appears to be an object covered by a blanket in the corner.\n\nHintbot: I'LL GIVE YOU A HINT ABOUT THIS PUZZLE, MEATBAG. THERE IS ITEM UNDER FABRIC SHEET.\n\nHuh? What was that?\n\n<<create-fire ObjectSpawner>>\n\nLooking at the sheet again, it looks like it has started to catch a blaze.\n\n...\n\n<<endif>>\n\nHintbot: OH NO I AM DYING PLEASE PUT OUT THE FIRE! THAT IS MY HINT!! BEEP BOOP.\n\n<<if $has_water_gun is true>>\nUse the water gun on Hintbot?\n-> Shoot the gun\n    I fired out all 12 shots at the blanket. Each bullet exploded into a small cloud of vapor on impact.\n    <<remove-fire ObjectSpawner>>\n    After shooting all the bullets, the fire died down enough to pull the blanket off of Hintbot without burning myself.\n    // Remove blanket\n    <<set $hintbot_uncovered to true>>\n    <<pickup Hintbot-Tarp>>\n    Hintbot: CORRECT. THE SOLUTION WAS USE WATER GUN ON BLANKET. GOOD JOB.\n    [[Living.Hintbot_Uncovered]]\n-> Save your bullets\n    Nah...\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n<<elseif $examined_blanket_hintbot is true>>\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n    Hintbot: MAYBE THERE IS SOMETHING IN THE FOOD COOLING UNIT THAT COULD STOP COMBUSTION FROM OCCURRING\n    Hintbot: THAT IS MY HINT\n<<endif>>\n\n<<set $examined_blanket_hintbot to true>>",
+		"body": "<<if $is_epilogue is true>>\n[[Living.Hintbot_Epilogue]]\n<<endif>>\n\n\n<<if $hintbot_uncovered is true>>\n    [[Living.Hintbot_Uncovered]]\n<<endif>>\n\n\n<<if $examined_blanket_hintbot is false>>\nThere appears to be an object covered by a blanket in the corner.\n\nHintbot: I'LL GIVE YOU A HINT ABOUT THIS PUZZLE, MEATBAG. THERE IS ITEM UNDER FABRIC SHEET.\n\nHuh? What was that?\n\n<<create-fire ObjectSpawner>>\n\nLooking at the sheet again, it looks like it has started to catch a blaze.\n\n...\n\n<<endif>>\n\nHintbot: OH NO I AM DYING PLEASE PUT OUT THE FIRE! THAT IS MY HINT!! BEEP BOOP.\n\n<<if $has_water_gun is true>>\nUse the water gun on Hintbot?\n-> Shoot the gun\n    I fired out all 12 shots at the blanket. Each bullet exploded into a small cloud of vapor on impact.\n    <<remove-fire ObjectSpawner>>\n    After shooting all the bullets, the fire died down enough to pull the blanket off of Hintbot without burning myself.\n    // Remove blanket\n    <<set $hintbot_uncovered to true>>\n    <<pickup Hintbot-Tarp>>\n    <e=blanket>Hintbot: CORRECT. THE SOLUTION WAS USE WATER GUN ON BLANKET. GOOD JOB.\n    [[Living.Hintbot_Uncovered]]\n-> Save your bullets\n    Nah...\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n<<elseif $examined_blanket_hintbot is true>>\n    Hintbot: HOLY SHIT I CAN FEEL MY WIRES MELTING PLEASE STOP THIS FIRE\n    Hintbot: MAYBE THERE IS SOMETHING IN THE FOOD COOLING UNIT THAT COULD STOP COMBUSTION FROM OCCURRING\n    Hintbot: THAT IS MY HINT\n<<endif>>\n\n<<set $examined_blanket_hintbot to true>>",
 		"position": {
 			"x": 1181,
 			"y": -156
@@ -192,7 +192,7 @@
 	{
 		"title": "Living.Fridge",
 		"tags": "",
-		"body": "<<if $is_epilogue is true>>\n[[Living.Fridge_Epilogue]]\n<<endif>>\n\nMAYBE I CAN SURVIVE IN MY REFRIGERATOR?\n\n<<switch-sprite Fridge>>\n<<disable Fridge>>\n\n<<create-olaf ObjectSpawner>>\n\n...\n\nWHAT IS THAT???",
+		"body": "<<if $is_epilogue is true>>\n[[Living.Fridge_Epilogue]]\n<<endif>>\n\nMAYBE I CAN SURVIVE IN MY REFRIGERATOR?\n\n<<switch-sprite Fridge>>\n<<disable Fridge>>\n\n<<create-olaf ObjectSpawner>>\n\n<e=fridge>...\n\nWHAT IS THAT???",
 		"position": {
 			"x": -669,
 			"y": 399
@@ -242,7 +242,7 @@
 	{
 		"title": "Ending.Pizza",
 		"tags": "",
-		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNothing off at all.\n\n(Pizza End)",
+		"body": "<<await ending SceneManager Pizza>>\n\n<e=bang>Suddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNothing off at all.\n\n(Pizza End)",
 		"position": {
 			"x": 935,
 			"y": 661
@@ -322,9 +322,9 @@
 	{
 		"title": "Living.Fridge_Epilogue",
 		"tags": "",
-		"body": "<<switch-sprite Fridge>>\n<<disable Fridge>>\n\n<<create-olaf ObjectSpawner>>\n\n...",
+		"body": "<<switch-sprite Fridge>>\n<<disable Fridge>>\n\n<<create-olaf ObjectSpawner>>\n\n<e=fridge>...",
 		"position": {
-			"x": -491,
+			"x": -494,
 			"y": 156
 		},
 		"colorID": 0
