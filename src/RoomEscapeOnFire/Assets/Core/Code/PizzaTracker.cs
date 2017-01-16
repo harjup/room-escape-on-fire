@@ -20,10 +20,10 @@ public class PizzaTracker : MonoBehaviour
     public IEnumerator PlayPoliceTracker()
     {
         var room = FindObjectOfType<Room>();
-        var pizzaTrackerPrefab = Resources.Load<GameObject>("Prefabs/OneOffs/Pizza_Gauge");
+        var pizzaTrackerPrefab = Resources.Load<GameObject>("Prefabs/OneOffs/Police_Gauge");
         var res = Instantiate(pizzaTrackerPrefab);
         res.transform.parent = room.transform;
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(10f);
         Destroy(res);
     }
 }

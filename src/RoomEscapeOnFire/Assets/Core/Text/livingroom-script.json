@@ -242,7 +242,7 @@
 	{
 		"title": "Ending.Pizza",
 		"tags": "",
-		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNot at all scripted, haha.\n\n(Pizza End)\n// go sepia, laugh track, roll credits, pizza ending",
+		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNothing off at all.\n\n(Pizza End)\n// go sepia, laugh track, roll credits, pizza ending",
 		"position": {
 			"x": 935,
 			"y": 661
@@ -252,7 +252,7 @@
 	{
 		"title": "Ending.Bee_Movie",
 		"tags": "",
-		"body": "<<await ending SceneManager Bee_Movie>>\n\nHehe, their voices are so high! They sound like bees!\nAnd they're flying around the screen so fast, another common attribute of bees!\nThis is definately a good use of my last $time_remaining minutes alive.\n...\nAnd now it is over, and I am dying.",
+		"body": "<<await ending SceneManager Bee_Movie>>\n\nHehe, their voices are so high! They sound like bees!\nAnd they're flying around the screen so fast, another common attribute of bees!\nThis is definitely a good use of my last $time_remaining minutes alive.\n...\nAnd now it is over, and I am dying.",
 		"position": {
 			"x": 714,
 			"y": 888
@@ -382,7 +382,7 @@
 	{
 		"title": "True_Ending",
 		"tags": "",
-		"body": "...\nOh, of course.\nThe solution was right behind me.\n\n<<await closet SceneManager>>\n\nThere was never a diversity mural here.\nIt has always been a normal window. A window with people on the other side.\nWatching me.\nMaybe I should jump right through and give them a visit.\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, even talk to living snowmen... I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right?\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of degrenerative diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
+		"body": "...\nOh, of course.\nThe solution was right behind me.\n\n<<await closet SceneManager>>\n\n<<play MusicPlayer panic>>\n\nThere was never a diversity mural here.\nIt has always been a normal window. A window with people on the other side.\nWatching me.\nMaybe I should jump right through and give them a visit.\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, even talk to living snowmen... I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right?\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of degrenerative diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
 		"position": {
 			"x": 978,
 			"y": -731
