@@ -122,7 +122,7 @@
 	{
 		"title": "Living.Pizza_Ending",
 		"tags": "",
-		"body": "That's it! I can order a pizza from Dominos and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pepperoni to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n// Show a pizza tracker graphic as it slowly makes the pizza\n<<await play PizzaTracker>>\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\nDelivery person: Uh, no\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\nDelivery Person: I didn't read those. Hold on.\n// X out pizza tracker and draw in police tracker. It finishes at 0:01.\n<<await play PoliceTracker>>\n\n[[Ending.Pizza]]",
+		"body": "That's it! I can order a pizza from Dominos and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pepperoni to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n// Show a pizza tracker graphic as it slowly makes the pizza\n<<await pizza PizzaTracker>>\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\nDelivery person: Uh, no\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\nDelivery Person: I didn't read those. Hold on.\n// X out pizza tracker and draw in police tracker. It finishes at 0:01.\n<<await police PizzaTracker>>\n\n[[Ending.Pizza]]",
 		"position": {
 			"x": 708,
 			"y": 655
