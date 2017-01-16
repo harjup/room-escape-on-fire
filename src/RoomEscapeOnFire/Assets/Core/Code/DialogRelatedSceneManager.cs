@@ -9,6 +9,7 @@ public class DialogRelatedSceneManager : MonoBehaviour
     private GameObject _currentScene;
     private GameObject _closetPrefab;
     private GameObject _trueClosetPrefab;
+    private GameObject _trueClosetBackPrefab;
     private GameObject _livingRoomPrefab;
     private GameObject _endingPrefab;
 
@@ -16,6 +17,7 @@ public class DialogRelatedSceneManager : MonoBehaviour
 	{
 	    _closetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Closet");
         _trueClosetPrefab = Resources.Load<GameObject>("Prefabs/Rooms/True-Closet");
+        _trueClosetBackPrefab = Resources.Load<GameObject>("Prefabs/Rooms/True-Closet-2");
         _livingRoomPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Living");
         _endingPrefab = Resources.Load<GameObject>("Prefabs/Rooms/Ending");
         SetupScene(_closetPrefab);
@@ -95,6 +97,16 @@ public class DialogRelatedSceneManager : MonoBehaviour
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
 
         SetupScene(_trueClosetPrefab);
+
+        yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
+    }
+
+    [AwaitableYarnCommand("closet-back")]
+    public IEnumerator ClosetBack()
+    {
+        yield return StartCoroutine(SceneFadeInOut.Instance.FadeToBlack());
+
+        SetupScene(_trueClosetBackPrefab);
 
         yield return StartCoroutine(SceneFadeInOut.Instance.FadeToClear());
     }

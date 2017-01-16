@@ -11,4 +11,10 @@ public class Pickup : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    [YarnCommand("reveal")]
+    public void Reveal()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+    }
 }
