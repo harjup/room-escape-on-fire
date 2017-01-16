@@ -52,7 +52,7 @@
 	{
 		"title": "Living.Olaf",
 		"tags": "",
-		"body": "<<if $is_epilogue is true>>\n[[Living.Olaf_Epilogue]]\n<<endif>>\n\n\n<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refridgerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <j>Walt Disney's Frozen</j>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refridgerator?\n\nOlaf: <w>Disney Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! <j>You're not a cop!</j>\nOlaf: Have you seen <j>Walt Disney's Frozen</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n    (Got watergun!)\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 60 seconds to the timer.\n    <<await add DeathTimer 60>>\n    <<pickup Olaf>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
+		"body": "<<if $is_epilogue is true>>\n[[Living.Olaf_Epilogue]]\n<<endif>>\n\n\n<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refrigerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <j>Walt Disney's Frozen</j>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refrigerator?\n\nOlaf: <w>Disney Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! <j>You're not a cop!</j>\nOlaf: Have you seen <j>Walt Disney's Frozen</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n    (Got watergun!)\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping 60 seconds to the timer.\n    <<await add DeathTimer 60>>\n    <<pickup Olaf>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
 		"position": {
 			"x": -397,
 			"y": 408
@@ -82,7 +82,7 @@
 	{
 		"title": "Living.Computer_Use",
 		"tags": "",
-		"body": "Now, what do I do with what little time I have left?\n\n-> Order a Pizza from Dominos\n    [[Living.Pizza_Ending]]\n-> Watch Bee Movie but x1000 speed\n    [[Ending.Bee_Movie]]",
+		"body": "Now, what do I do with what little time I have left?\n\n-> Order a Pizza from Domios\n    [[Living.Pizza_Ending]]\n-> Watch Bee Movie but x1000 speed\n    [[Ending.Bee_Movie]]",
 		"position": {
 			"x": 470,
 			"y": 648
@@ -92,7 +92,7 @@
 	{
 		"title": "Living.This_Is_Fine",
 		"tags": "",
-		"body": "<<if $checked_finedog is true>>\n    Dog: This is fine.\n\n    I wonder if he'll feel the same when we're about to run out of oxygen...\n<<else>>\n    A completely original dog is seated at the dining room table.\n    His little hat is caught in the blaze.\n    \n    Dog: ...\n    Dog: ...\n    \n    The dog clears his throat.\n    \n    Dog: This is fine.\n    Dog: I'm okay with the events that are unfolding currently.\n    The dog takes a sip of coffee. His arm singed by the blaze.\n    Dog: That's okay, thinkgs are going to be okay.\n    The dogs face starts to melt.\n    \n    Dog: ...\n    \n    Dog: Theft is not a joke.\n    \n    I wonder if he'll feel the same when we're about to run out of oxygen...\n    <<set $checked_finedog to true>>\n<<endif>>",
+		"body": "<<if $checked_finedog is true>>\n    Dog: This is fine.\n\n    Maybe he'll feel differently about our situation if I check back later...\n<<else>>\n    A completely original dog is seated at the dining room table.\n    His little hat is caught in the blaze.\n    \n    Dog: ...\n    Dog: ...\n    \n    The dog clears his throat.\n    \n    Dog: This is fine.\n    Dog: I'm okay with the events that are unfolding currently.\n    The dog takes a sip of coffee. His arm singed by the blaze.\n    Dog: That's okay, thinkgs are going to be okay.\n    The dogs face starts to melt.\n    \n    Dog: ...\n    \n    Dog: Theft is not a joke.\n\n    Maybe he'll feel differently about our situation if I check back later...\n    <<set $checked_finedog to true>>\n<<endif>>",
 		"position": {
 			"x": 1317,
 			"y": 304
@@ -122,7 +122,7 @@
 	{
 		"title": "Living.Pizza_Ending",
 		"tags": "",
-		"body": "That's it! I can order a pizza from Dominos and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pepperoni to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n// Show a pizza tracker graphic as it slowly makes the pizza\n<<await pizza PizzaTracker>>\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\nDelivery person: Uh, no\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\nDelivery Person: I didn't read those. Hold on.\n// X out pizza tracker and draw in police tracker. It finishes at 0:01.\n<<await police PizzaTracker>>\n\n[[Ending.Pizza]]",
+		"body": "That's it! I can order a pizza from Domios and tell them to call the fire department in the delivery instructions!!!\nLet's just add a one-topping large pizza to the cart...\nEnter my payment information...\nAnd... submit! Here goes nothing!\n\n<<await pizza PizzaTracker>>\n\n*knock knock*\nThey're here!\nHEY! HEY! DID YOU BRING THE POLICE? I CAN'T OPEN THIS DOOR!\nDelivery person: Uh, no\nIT WAS IN THE DELIVERY INSTRUCTIONS!!!\nDelivery Person: I didn't read those. Hold on.\n\n<<await police PizzaTracker>>\n\n[[Ending.Pizza]]",
 		"position": {
 			"x": 708,
 			"y": 655
@@ -192,7 +192,7 @@
 	{
 		"title": "Living.Fridge",
 		"tags": "",
-		"body": "<<if $is_epilogue is true>>\n[[Living.Fridge_Epilogue]]\n<<endif>>\n\nMAYBE I CAN SURVIVE IN MY REFRIDGERATOR?\n\n<<switch-sprite Fridge>>\n<<disable Fridge>>\n\n<<create-olaf ObjectSpawner>>\n\n...\n\nWHAT IS THAT???",
+		"body": "<<if $is_epilogue is true>>\n[[Living.Fridge_Epilogue]]\n<<endif>>\n\nMAYBE I CAN SURVIVE IN MY REFRIGERATOR?\n\n<<switch-sprite Fridge>>\n<<disable Fridge>>\n\n<<create-olaf ObjectSpawner>>\n\n...\n\nWHAT IS THAT???",
 		"position": {
 			"x": -669,
 			"y": 399
@@ -242,7 +242,7 @@
 	{
 		"title": "Ending.Pizza",
 		"tags": "",
-		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNothing off at all.\n\n(Pizza End)\n// go sepia, laugh track, roll credits, pizza ending",
+		"body": "<<await ending SceneManager Pizza>>\n\nSuddenly, the door was kicked open!\nYou made it officer, I'm saved!\nCop: Yeah, from hunger!\n<j>HAHAHAHAHAHAHAHAHA!</j>\nWe all laughed in unison, in a way that felt completely normal and natural.\nNothing off at all.\n\n(Pizza End)",
 		"position": {
 			"x": 935,
 			"y": 661
@@ -382,7 +382,7 @@
 	{
 		"title": "True_Ending",
 		"tags": "",
-		"body": "...\nOh, of course.\nThe closet.\n\n<<await closet SceneManager>>\n\nThe solution was right behind me.\n\n<<await closet-back SceneManager>>\n\nThis sexy videogame-dog-tan poster...\n\n<<play MusicPlayer panic>>\n\n...\n<<pickup Doggo-Pinup>>\n<<reveal Doggo-Pinup-Floor>>\n\nIs covering a normal window. A window with people on the other side.\nPeople who've been watching me.\nMaybe I should jump right through and give them a visit.\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, even talk to living snowmen... I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right?\nMargaret: Now he's overcome the memory blocking drugs.\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of degrenerative diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
+		"body": "...\nOh, of course.\nThe closet.\n\n<<await closet SceneManager>>\n\nThe solution was right behind me.\n\n<<await closet-back SceneManager>>\n\nThis sexy videogame-dog-tan poster...\n\n<<play MusicPlayer panic>>\n\n...\n<<pickup Doggo-Pinup>>\n<<reveal Doggo-Pinup-Floor>>\n\nIs covering a normal window. A window with people on the other side.\nPeople who've been watching me.\nMaybe I should jump right through and give them a visit.\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, even talk to living snowmen... I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right?\nMargaret: Now he's overcome the memory blocking drugs.\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
 		"position": {
 			"x": 978,
 			"y": -731
