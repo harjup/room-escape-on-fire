@@ -92,7 +92,7 @@
 	{
 		"title": "Living.This_Is_Fine",
 		"tags": "",
-		"body": "<<if $checked_finedog is true>>\n    Dog: This is fine.\n<<else>>\n    A completely original dog is seated at the dining room table.\n    His little hat is caught in the blaze.\n    \n    Dog: ...\n    Dog: ...\n    \n    The dog clears his throat.\n    \n    Dog: This is fine.\n    Dog: I'm okay with the events that are unfolding currently.\n    The dog takes a sip of coffee. His arm singed by the blaze.\n    Dog: That's okay, thinkgs are going to be okay.\n    The dogs face starts to melt.\n    \n    Dog: ...\n    \n    Dog: Theft is not a joke.\n    \n    <<set $checked_finedog to true>>\n<<endif>>",
+		"body": "<<if $checked_finedog is true>>\n    Dog: This is fine.\n\n    I wonder if he'll feel the same when we're about to run out of oxygen...\n<<else>>\n    A completely original dog is seated at the dining room table.\n    His little hat is caught in the blaze.\n    \n    Dog: ...\n    Dog: ...\n    \n    The dog clears his throat.\n    \n    Dog: This is fine.\n    Dog: I'm okay with the events that are unfolding currently.\n    The dog takes a sip of coffee. His arm singed by the blaze.\n    Dog: That's okay, thinkgs are going to be okay.\n    The dogs face starts to melt.\n    \n    Dog: ...\n    \n    Dog: Theft is not a joke.\n    \n    I wonder if he'll feel the same when we're about to run out of oxygen...\n    <<set $checked_finedog to true>>\n<<endif>>",
 		"position": {
 			"x": 1317,
 			"y": 304
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "<<if $is_epilogue is true>>\n[[Living.Epilogue_FineDog]]\n<<endif>>\n\n<<if $seconds_remaining <= 45>>\n    [[Living.This_Is_Not_Fine]]\n<<else>>\n    [[Living.This_Is_Fine]]\n<<endif>>",
 		"position": {
-			"x": 1033,
-			"y": 395
+			"x": 1038,
+			"y": 397
 		},
 		"colorID": 0
 	},
