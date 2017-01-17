@@ -21,11 +21,11 @@ public class SuperTextSound : MonoBehaviour
     {
         if (s == "fridge")
         {
-            _audioSource.PlayOneShot(Fridge, 1f);
+            _audioSource.PlayOneShot(Fridge, .75f);
         }
         else if (s == "bang")
         {
-            _audioSource.PlayOneShot(Bang, .5f);
+            _audioSource.PlayOneShot(Bang, .25f);
         }
         else if (s == "knock")
         {
@@ -37,7 +37,7 @@ public class SuperTextSound : MonoBehaviour
         }
         else if (s == "explosion")
         {
-            _audioSource.PlayOneShot(Explosion, .25f);
+            _audioSource.PlayOneShot(Explosion, .5f);
         }
     }
 }

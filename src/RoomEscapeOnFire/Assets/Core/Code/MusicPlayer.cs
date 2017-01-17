@@ -103,7 +103,7 @@ public class MusicPlayer : MonoBehaviour
         MusicSource.Stop();
         MusicSource.clip = song;
         MusicSource.Play();
-        MusicSource.DOFade(.5f, .125f);
+        MusicSource.volume = .5f;
     }
 
     [YarnCommand("stop")]

@@ -12,7 +12,7 @@
 	{
 		"title": "Living.Enter",
 		"tags": "",
-		"body": "<<stop MusicPlayer>>\n\nOh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n<<if $is_epilogue is true>>\n[[Living.Epilogue]]\n<<endif>>\n\n...\n\n<<play MusicPlayer panic>>\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\n<<if visited(\"Living.Tutorial_Ending\") is false and $SkipIntro is false>>\nMY WALLSCROLLS!!!\n\nMY ANIME FIGURINES!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n    // uncomment when choices work.\n    [[Living.Tutorial]]\n<<endif>>\n\nI GOTTA DO SOMETHING, FAST!!!\n\n<<start DeathTimer>>",
+		"body": "<<stop MusicPlayer>>\n\nOh! This is my living room! I was in my own closet the whole time! Silly me!\n\n...\n\n<<if $is_epilogue is true>>\n[[Living.Epilogue]]\n<<endif>>\n\n...\n\n<<play MusicPlayer panic>>\n\nOH MY GOD THIS ROOM IS ON FIRE!!!\n\n<<if visited(\"Living.Tutorial_Ending\") is false and $SkipIntro is false>>\nMY WALLSCROLLS!!!\n\nMY PAINTING!!!\n\nMY COMPUTER!!!!!!!!\n\nI AM GOING TO BURN TO DEATH IN THREE MINUTES I GOTTA GET OUT OF HERE!!!\n\n    [[Living.Tutorial]]\n<<endif>>\n\nI GOTTA DO SOMETHING, FAST!!!\n\n<<start DeathTimer>>",
 		"position": {
 			"x": 80,
 			"y": -382
@@ -22,7 +22,7 @@
 	{
 		"title": "Living.Tutorial",
 		"tags": "",
-		"body": "<<start-tutorial DeathTimer>>\n\nBut this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> <j>I DON'T HAVE TIME FOR THIS</j>\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer 5>>\n    GOOD ENOUGH\n-> <j>THE FUNDAMENTALS ARE IMPORTANT</j>\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\n...\n...\n...\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nLET'S GO!!!\n<<await run-down DeathTimer>>\n// run down timer to 1, pause at 1\nShit.\n\n[[Living.Tutorial_Ending]]\n\n// Give control for 5 seconds, then die. Tutorial ending.",
+		"body": "<<start-tutorial DeathTimer>>\n\nBut this is my first time walking around the living room in a little bit, maybe I should recall my \"tutorial\" training...\n\n-> <j>I DON'T HAVE TIME FOR THIS</j>\n    I DON'T HAVE TIME FOR THIS!!! \n    I NEED TO MAKE TIME!\n    HRRRRRRGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer -10>>\n    SHIT I GOT HOTTER, NOT COOLER\n    HRRRRRRGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG!!!!!!!!!\n    <<await add DeathTimer 5>>\n    GOOD ENOUGH\n-> <j>THE FUNDAMENTALS ARE IMPORTANT</j>\n    THAT'S RIGHT! WE NEED TO REVIEW!\n\nFirst, I should remember how to get around here.\nI believe if I were to imagine a \"mouse cursor\", and place that cursor at the end of my vision...\nMy perspective might \"scroll\" to include more scenery in that direction.\nBut what if I want to call attention to some object?\nHovering this \"mouse cursor\" over the item and \"clicking\" on the item ought to solve this.\nHmm, I think that's it for now!\nUh, what was I doing again?\n...\n...\n...\nOH RIGHT, GET OUT OF THIS ROOM!\nBut I feel like there's something important I'm forgetting...\nHmm...\n<<await run-down DeathTimer>>\n// run down timer to 1, pause at 1\nShit.\n\n[[Living.Tutorial_Ending]]\n\n// Give control for 5 seconds, then die. Tutorial ending.",
 		"position": {
 			"x": 357,
 			"y": -376
@@ -32,7 +32,7 @@
 	{
 		"title": "Living.Tutorial_Ending",
 		"tags": "",
-		"body": "<<await ending SceneManager Out_Of_Time>>\n\nOH NO, I RAN OUT OF TIME I'M DYINGGGGGG\nIF THERE WERE A <j>NEXT TIME</j> I WOULDN'T <j>REVIEW THE BASICS</j> AT ALL!!!",
+		"body": "<<await ending SceneManager Out_Of_Time>>\n<<stop MusicPlayer>>\n\nOH NO, I RAN OUT OF TIME I'M DYINGGGGGG\nIF THERE WERE A <j>NEXT TIME</j> I WOULDN'T <j>REVIEW THE BASICS</j> AT ALL!!!",
 		"position": {
 			"x": 594,
 			"y": -382
@@ -102,7 +102,7 @@
 	{
 		"title": "Living.This_Is_Not_Fine",
 		"tags": "",
-		"body": "<<await ending SceneManager This_Is_Not_Fine>>\n\nThe competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: OH MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n\nPlease support KC Green's work. He is a national treasure.\n// This is not fine ending",
+		"body": "<<await ending SceneManager This_Is_Not_Fine>>\n\nThe competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: OH MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n\n<<stop MusicPlayer>>\nPlease support KC Green's work. He is a national treasure.\n// This is not fine ending",
 		"position": {
 			"x": 1317,
 			"y": 518
@@ -172,7 +172,7 @@
 	{
 		"title": "Ending.Hole_Hintbot",
 		"tags": "",
-		"body": "<<stop DeathTimer>>\n\nCOME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\n<<await ending SceneManager Rejection_Of_Vore>>\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A DOG MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME?\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\n<e=explosion>BOOOOOOOOM\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n(RIP Hintbot)\n// RIP HINTBOT ENDING",
+		"body": "<<stop DeathTimer>>\n\nCOME ON HINT BOT, GET YOUR FAT ASS IN THERE AND CALL FOR HELP\n\nHintbot: KZZT- MAYBE THE BEST PATH IS THE PATH YOU BARELY FIT IN BEEP BOOP\n\nThis hole is creepy and I'm not touching it. For all I know it'll turn me into a beef jerky monster.\n\nHintbot: KZZZZZZZT- BEEF JERKY IS YOUR FATE IF YOU STAY IN FIRE. MORON. BEEP BOOP.\n\n<<await ending SceneManager Rejection_Of_Vore>>\n\nAfter attempting to cram Hintbot through the hole for what felt like $time_remaining minutes, he started making headway into the hole.\nSuddenly a fissure appeared in the hole. Hintbot fell into it. \nThe fissure immediately closed back up.\n\nHintbot: OH GOD. WHAT IS THIS FUCKED UP CREATURE. IS THAT A DOG MOUTH?\nHintbot: IS THIS SOME KIND OF WEIRD VORE THING? IS THIS SOME KIND OF VORE FETISH GAME?\nHintbot: I AM JUST A HUMBLE HINTBOT I DID NOT SIGN UP FOR ANY VORE FETISH GAMES!!!\nHintbot: SELF DESTRUCT ACTIVATED.\n\n...\n...\n\n<<stop MusicPlayer>>\n<e=explosion>BOOOOOOOOM\n\nWow that explosion blew a huge hole in the wall!\nWell, I guess I'll just leave now.\nAnd ignore the wounded shreiking unfathomable monstrosity that tried to eat me.\nAnd move to a different country.\nFuck this.\n\n(RIP Hintbot)\n// RIP HINTBOT ENDING",
 		"position": {
 			"x": 1887,
 			"y": -4
@@ -182,9 +182,9 @@
 	{
 		"title": "Ending.Hole_Mine",
 		"tags": "",
-		"body": "<<await ending SceneManager Vore>>\n\nThis is MY hole!\nI smashed my body against the hole several times.\nI NEED TO LUBE UP!\nI covered myself in oil, never losing eye contact with the hole.\nTrying again, I managed to slide right in. The hole felt like it was sucking me deeper and deeper down.\nI couldn't move my head or limbs, only slowly slide forward in pitch blackness.\nI may not have burned to death, but I'm not sure if hole is a better fate...\nBut weirdly enough, I feel... content.\nSafe.\n...\n...\n...\nHappy.\n// HOLE ENDING",
+		"body": "<<await ending SceneManager Vore>>\n\nThis is MY hole!\nI smashed my body against the hole several times.\nI NEED TO LUBE UP!\nI covered myself in oil, never losing eye contact with the hole.\nTrying again, I managed to slide right in. The hole felt like it was sucking me deeper and deeper down.\n<<stop MusicPlayer>>\nI couldn't move my head or limbs, only slowly slide forward in pitch blackness.\nI may not have burned to death, but I'm not sure if hole is a better fate...\nBut weirdly enough, I feel... content.\nSafe.\n...\n...\n...\nHappy.\n// HOLE ENDING",
 		"position": {
-			"x": 1957,
+			"x": 1955,
 			"y": 239
 		},
 		"colorID": 0
@@ -202,7 +202,7 @@
 	{
 		"title": "Ending.Out_Of_Time",
 		"tags": "",
-		"body": "<<await ending SceneManager Out_Of_Time>>\n\nI fell on the ground, covered in fire.\nThis is the end for me.",
+		"body": "<<await ending SceneManager Out_Of_Time>>\n<<stop MusicPlayer>>\n\nI fell on the ground, covered in fire.\nThis is the end for me.",
 		"position": {
 			"x": 763,
 			"y": 1184
@@ -212,7 +212,7 @@
 	{
 		"title": "Ending.Brute_Force",
 		"tags": "",
-		"body": "<<stop DeathTimer>>\n\nOh. It's open! Easy peasy.\nWell, I guess I'll just walk out this door and leave now.\n...\nOH WAIT ALL MY BELONGINGS ARE STILL BURNING TO DEATH SHIT!!!\n\n<<await ending SceneManager Brute_Force>>\n\nWhen the fire department arrived, my dwelling was a charred mess.\nThey still sprayed the charcoal down with their hoses, though.\n<i>My date today bailed on me. One way or another I'm making <j>something</j> wet tonight</i>, he said as he sprayed the coals.\nSo now my house is a puddle.\nGuess I'm sleeping outside for the time being.\nThis time, I'm NOT in the dog house.",
+		"body": "<<stop DeathTimer>>\n\nOh. It's open! Easy peasy.\nWell, I guess I'll just walk out this door and leave now.\n...\nOH WAIT ALL MY BELONGINGS ARE STILL BURNING TO DEATH SHIT!!!\n\n<<await ending SceneManager Brute_Force>>\n<<stop MusicPlayer>>\n\nWhen the fire department arrived, my dwelling was a charred mess.\nThey still sprayed the charcoal down with their hoses, though.\n<i>My date today bailed on me. One way or another I'm making <j>something</j> wet tonight</i>, he said as he sprayed the coals.\nSo now my house is a puddle.\nGuess I'm sleeping outside for the time being.\nThis time, I'm NOT in the dog house.",
 		"position": {
 			"x": 759,
 			"y": -78
@@ -232,7 +232,7 @@
 	{
 		"title": "Ending.Frozen",
 		"tags": "",
-		"body": "<<await ending SceneManager Frozen>>\n\nThe little snow man in my refridgerator begins playing the full feature length film Frozen for my undivided attention. \nOlaf held me tight, keeping me cool enough to stay alive during the full runtime. \nWe die in each other's arms die at the credits, having experienced one the greatest ever children's fairytale film.\nBAD END...?",
+		"body": "<<await ending SceneManager Frozen>>\n<<stop MusicPlayer>>\n\nThe little snow man in my refridgerator begins playing the full feature length film Frozen for my undivided attention. \nOlaf held me tight, keeping me cool enough to stay alive during the full runtime. \nWe die in each other's arms die at the credits, having experienced one the greatest ever children's fairytale film.\nBAD END...?",
 		"position": {
 			"x": -129,
 			"y": 408
@@ -384,7 +384,7 @@
 		"tags": "",
 		"body": "...\nOh, of course.\nThe closet.\n\n<<await closet SceneManager>>\n\nThe solution was right behind me.\n\n<<await closet-back SceneManager>>\n\nThis sexy videogame-dog-tan poster...\n\n...\n<<pickup Doggo-Pinup>>\n<<reveal Doggo-Pinup-Floor>>\n\nIs covering a normal window. A window with people on the other side.\nPeople who've been watching me.\n\nMaybe I should jump right through and give them a visit.\n<<play MusicPlayer epilogue>>\n<j>Then they can have something to panic about for a change.</j>\n<j>Because I'll kill them all.</j>\n<j>They've killed me so many times, it's only fair I pay them back.</j>\n\n<<await ending SceneManager True_Ending>>\n\nPLEASE EVACUATE THE FACILITY. A VIOLENT SUBJECT IS LOOSE.\n50 WOUNDED.\n10 CONFIRMED KILLED.\n\nMargaret: *gasp* *gasp*\nMargaret: I never thought something like this could happen.\nMargaret: I knew there were researchers observing the effects of constant panic on animals, but to think they went to such extremes...\nMargaret: Once the subject learned how to open a fridge, use a computer, even talk to living snowmen... I thought they'd end the test.\nMargaret: But I suppose the sky's the limit, right?\nMargaret: Now he's overcome the memory blocking drugs.\nMargaret: ... *gasp*\nMargaret: I just hope my wound doesn't worsen before help arrives.\nMargaret: ... *gasp* *gasp*\nMargaret: I'd hate to leave my husband alone...\nMargaret: ... much like how a female Northern Saw-Whet Owl leaves her mate and young before they're ready to leave the nest, causing them to live in filth until they're able to move on with their lives.\nMargaret: not that we have *gasp* children or anything...\nMargaret: *gasp* *gasp* *gasp*\n\n...\n\n<<play MusicPlayer dog>>\n<<await finale SceneManager>>\n\nWell, I finally escaped the room, which was on fire!\nI sure am glad I was able to have a happy ending!\nI think the real moral of the story, though, is that animal experimentation is probably always morally wrong, I bet.\nEven if it helps treatment of diseases like diabetes.\nAnd also I did nothing wrong.\nFin.",
 		"position": {
-			"x": 978,
+			"x": 979,
 			"y": -731
 		},
 		"colorID": 5
