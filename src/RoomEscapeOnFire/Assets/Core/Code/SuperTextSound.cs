@@ -10,6 +10,7 @@ public class SuperTextSound : MonoBehaviour
     public AudioClip Bang;
     public AudioClip Knock;
     public AudioClip Blanket;
+    public AudioClip Explosion;
 
     public void Start()
     {
@@ -33,6 +34,10 @@ public class SuperTextSound : MonoBehaviour
         else if (s == "blanket")
         {
             _audioSource.PlayOneShot(Blanket, 1f);
+        }
+        else if (s == "explosion")
+        {
+            _audioSource.PlayOneShot(Explosion, .25f);
         }
     }
 }
