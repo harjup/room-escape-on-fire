@@ -52,7 +52,7 @@
 	{
 		"title": "Living.Olaf",
 		"tags": "",
-		"body": "<<if $is_epilogue is true>>\n[[Living.Olaf_Epilogue]]\n<<endif>>\n\n\n<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refrigerator.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's film <j>Walt Disney's Frozen</j>! I am a trademarked character loved by all children!\nOlaf: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refrigerator?\n\nOlaf: <w>Disney Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nOlaf: Step off! <j>You're not a cop!</j>\nOlaf: Have you seen <j>Walt Disney's Frozen</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n    (Got watergun!)\n-> No\n    Olaf: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his song titled \"In Summer\" from the film, Frozen.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping five minutes to the timer!\n    <<await add DeathTimer 300>>\n    <<pickup Olaf>>\n<<else>>\nOlaf: Enjoy your gun!\nOlaf: I hope love it as much as children around the world love me, Olaf, the trademarked funny little snowman from the motion picture Frozen.\n<<endif>>",
+		"body": "<<if $is_epilogue is true>>\n[[Living.Olaf_Epilogue]]\n<<endif>>\n\n\n<<if $has_water_gun is false>>\n\nThere appears to be a poorly constructed snowman inside this refrigerator.\n\nSnofluff: Hello! I am a funny little snowman from the animated children's film <j>[REDACTED]</j>! I am a trademarked character loved by all children!\nSnofluff: I am especially loved by the children under 5. My core demographic.\n\nWhy are you in my refrigerator?\n\nSnofluff: <w>Magic!</w>\n\nYou knocked all my food out to make room for your snow man body!\n\nSnofluff: Step off! <j>You're not a cop!</j>\nSnofluff: Have you seen <j>My Funny Little Snow Movie</j>? Did you watch it to the end?\n\n-> Yes\n    Wonderful! Here's a gun!\n    It shoot bullets made of ice.\n    It is not very effective for killing or putting out fires.\n    You could probably put out one fire with the bullets in the gun.\n    <<set $has_water_gun to true>>\n    (Got watergun!)\n-> No\n    Snofluff: Let's watch it to the end! I have a portable film player inside of my snowy flesh!\n    [[Ending.Frozen]]\n-> Eat the snow man\n    // This could tie into the brute force ending, making the puzzle getting enough time from eating frozen items.\n    I eat the snow man.\n    The snow man cried out \"Don't eat me! I'm a living snow man!\" 125 times, the length in seconds of his featured song from his funny little snow movie.\n    But that didn't stop me! All the frozen snowman flesh in my belly adds a whopping five minutes to the timer!\n    <<await add DeathTimer 300>>\n    <<pickup Olaf>>\n<<else>>\nSnofluff: Enjoy your gun!\nSnofluff: I hope love it as much as children around the world love me, Snofluff, the trademarked funny little snowman from a funny little snow movie.\n<<endif>>",
 		"position": {
 			"x": -397,
 			"y": 408
@@ -102,7 +102,7 @@
 	{
 		"title": "Living.This_Is_Not_Fine",
 		"tags": "",
-		"body": "<<await ending SceneManager This_Is_Not_Fine>>\n\nThe competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: OH MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n\n<<stop MusicPlayer>>\nPlease support KC Green's work. He is a national treasure.\n// This is not fine ending",
+		"body": "<<await ending SceneManager This_Is_Not_Fine>>\n\nThe competely original dog sits at the dining room table.\nDog: Th-\nThe dog clears his throat.\nDog: THIS IS NOT FINE!!!\nDog: OH MY GOD EVERYTHINGS ON FIRE\nDog: WHAT THE HELL IS MY PROBLEM???\nDog: OH MY GOD JESUS FUCK\nDog: WHAT THE FUCK WAS I EVEN THINKING?\nThe dog produces a fire extinguisher and begins putting out all the fires.\nDog: THERE WAS NO REASON TO LET IT LAST THIS LONG AND GET THIS BAD\nDog: THEY SHOT A GORILLA FOR GODSSAKE\n\n...\n\nThe fires have been put out, and your livingroom is now a charred mess.\n\n<<stop MusicPlayer>>\nTheft is still not a joke.\n// This is not fine ending",
 		"position": {
 			"x": 1317,
 			"y": 518
@@ -114,7 +114,7 @@
 		"tags": "",
 		"body": "<<if $is_epilogue is true>>\n[[Living.Epilogue_FineDog]]\n<<endif>>\n\n<<if $seconds_remaining <= 120>>\n    [[Living.This_Is_Not_Fine]]\n<<else>>\n    [[Living.This_Is_Fine]]\n<<endif>>",
 		"position": {
-			"x": 1038,
+			"x": 1039,
 			"y": 397
 		},
 		"colorID": 0
@@ -232,7 +232,7 @@
 	{
 		"title": "Ending.Frozen",
 		"tags": "",
-		"body": "<<await ending SceneManager Frozen>>\n<<stop MusicPlayer>>\n\nThe little snow man in my refridgerator begins playing the full feature length film Frozen for my undivided attention. \nOlaf held me tight, keeping me cool enough to stay alive during the full runtime. \nWe die in each other's arms die at the credits, having experienced one the greatest ever children's fairytale film.\nBAD END...?",
+		"body": "<<await ending SceneManager Frozen>>\n<<stop MusicPlayer>>\n\nThe little snow man in my refridgerator begins playing the full feature length funny little snow film for my undivided attention. \nSnofluff held me tight, keeping me cool enough to stay alive during the full runtime. \nWe die in each other's arms die at the credits, having experienced one the greatest ever children's fairytale films.\nBAD END...?",
 		"position": {
 			"x": -129,
 			"y": 408
@@ -312,9 +312,9 @@
 	{
 		"title": "Living.Olaf_Epilogue",
 		"tags": "",
-		"body": "Olaf: Hello! I am Olaf the Snowma- \n\nI would like you water gun, please.\n\nOlaf: ...\n\nGive me the gun or I'll eat you.\n\nOlaf: Hello! I am Olaf the Snowman from the animated children's fi-\n\nYES, I HAVE SEEN FROZEN\n\nOlaf: ...\n\nOlaf: I'd be careful if I were you, dog.\n\n<<set $has_water_gun to true>>\n\n(Got watergun!)\n\n<<pickup Olaf>>\n\nWhere did he go?",
+		"body": "Snofluff: Hello! I am Snofluff the Snowma- \n\nI would like you water gun, please.\n\nSnofluff: ...\n\nGive me the gun or I'll eat you.\n\nSnofluff: Hello! I am Snofluff the Snowman from the animated children's fi-\n\nYES, I HAVE SEEN YOUR CRAP MOVIE\n\nSnofluff: ...\n\nSnofluff: I'd be careful if I were you, dog.\n\n<<set $has_water_gun to true>>\n\n(Got watergun!)\n\n<<pickup Olaf>>\n\nWhere did he go?",
 		"position": {
-			"x": -155,
+			"x": -152,
 			"y": 143
 		},
 		"colorID": 0
