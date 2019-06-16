@@ -23,7 +23,7 @@ public class TextDisplayGui : MonoBehaviour
         {
             if (_superText == null)
             {
-                var textWindow = transform.FindChild("MainText");
+                var textWindow = transform.Find("MainText");
                 return _superText = textWindow.GetComponent<SuperTextMesh>();
             }
 
@@ -58,7 +58,7 @@ public class TextDisplayGui : MonoBehaviour
 
     public void SetName(string name)
     {
-        var nameWindow = _activeDialogueWindow.transform.FindChild("Name");
+        var nameWindow = _activeDialogueWindow.transform.Find("Name");
 
         if (nameWindow != null)
         {

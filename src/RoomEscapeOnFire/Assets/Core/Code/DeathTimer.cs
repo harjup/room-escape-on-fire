@@ -21,8 +21,8 @@ public class DeathTimer : MonoBehaviour
 
     void Start ()
     {
-        _deathDescription = transform.FindChild("DeathDescription").GetComponent<SuperTextMesh>();
-        _timerValue = transform.FindChild("TimerValue").GetComponent<SuperTextMesh>();
+        _deathDescription = transform.Find("DeathDescription").GetComponent<SuperTextMesh>();
+        _timerValue = transform.Find("TimerValue").GetComponent<SuperTextMesh>();
 
         _dialogRunner = FindObjectOfType<DialogueRunner>();
 

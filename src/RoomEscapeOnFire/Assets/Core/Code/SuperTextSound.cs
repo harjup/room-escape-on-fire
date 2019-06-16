@@ -37,7 +37,7 @@ public class SuperTextSound : MonoBehaviour
         }
         else if (s == "explosion")
         {
-            _audioSource.PlayOneShot(Explosion, .5 f);
+            _audioSource.PlayOneShot(Explosion, .5f);
         }
     }
 }
